@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  cursor: none;
 }
 
 h1 {
@@ -66,4 +67,39 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@keyframes scaleCursor {
+  0% {
+    scale: 1.2;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.2;
+  }
+}
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: fixed;
+  border-radius: 50%;
+}
+
+.cursor-dot {
+  transition: transform 0.1s ease-in-out;
+  width: 10px;
+  height: 10px;
+  background-color: chartreuse;
+  z-index: 9000;
+}
+
+.cursor-dot-outline {
+  transition: ease-in-out, top 0.04s ease-in-out, left 0.04s ease-in-out;
+  animation: scaleCursor 1s infinite;
+  width: 4rem;
+  height: 4rem;
+  border: 1px dashed rgba(29, 229, 29, 0.5);
+  z-index: 9000;
 }
