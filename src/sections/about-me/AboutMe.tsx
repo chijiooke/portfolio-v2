@@ -4,12 +4,37 @@ import { StyledSpanTags } from "../../components/StyledSpanTags";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
 import me from "../../assets/display-picture.jpg";
 import "./about-me.css";
+import { SectionHeader } from "../../components/SectionHeader";
+import { useThemeContext } from "../../ThemeContext";
+import ThreeJsCylinderComponent from "../../components/ThreeJSCylinderComponent";
+import { Canvas } from "@react-three/fiber";
+import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
 
 export const AboutMe = () => {
+  const { smallDotRef, bigDotRef } = useThemeContext();
+
   return (
     <ScrollSnapWrapper>
+      {/* <Canvas
+        style={{
+          width: "100vw",
+          height: "100vh",
+          transition: "0.8s",
+          position: "absolute",
+          top: 0,
+          zIndex: 0,
+        }}
+      >
+        <ambientLight />
+        <ThreeJsDonutComponent
+          // position={[-9, 0, 0]}
+          wireframe={true}
+          smallDotRef={smallDotRef}
+          bigDotRef={bigDotRef}
+        />
+      </Canvas> */}
       <Container>
-        <h6>About Me</h6>
+        <SectionHeader>About Me</SectionHeader>
         <div className="about__me__wrapper">
           <div className="about__me__text__wrapper">
             <p className="about__me__text">
@@ -26,20 +51,17 @@ export const AboutMe = () => {
               developer for a time period.{" "}
             </p>
             <p className="about__me__text">
-              fast forward a couple of years later I have had the oportunity to
-              work in various sectors{" "}
-              <UnderlinedAnchor to="https://raaxo.ng/">
-                SAAS
-              </UnderlinedAnchor>
-              ,{" "}
+              fast forward a couple of years later I've been oportuned to work
+              in various sectors{" "}
+              <UnderlinedAnchor to="https://raaxo.ng/">SAAS</UnderlinedAnchor>,{" "}
               <UnderlinedAnchor to="https://multonion.com/">
                 Procurement
               </UnderlinedAnchor>{" "}
               and even{" "}
               <UnderlinedAnchor to="https://fastmeet.cam">
-                 open source
+                open source
               </UnderlinedAnchor>{" "}
-              fallen hoplessly in love with combining typography, imagery,
+              whils utilizing my passion for combining typography, imagery,
               Interactions, data and colors to create solutions to diverse
               business problems.
             </p>{" "}

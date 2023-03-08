@@ -126,3 +126,8 @@ button:focus-visible {
   border: 1px dashed var(--mildGreen);
   z-index: 9000;
 }
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 500;
+}
