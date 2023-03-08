@@ -22,8 +22,8 @@ export const UnderlinedAnchor: FC<{ children: ReactNode; to: string }> = ({
           bigDotRef.current.style.scale = "0.6";
         //   bigDotRef.current.style.animation = "none";
           bigDotRef.current.style.border = "none";
-          bigDotRef.current.style.backgroundColor = theme.colors.hotpink;
-          bigDotRef.current.style.opacity = "0.1";
+          bigDotRef.current.style.backgroundColor = theme.colors.ghostpink;
+          // bigDotRef.current.style.opacity = "0.1";
         }
       }}
       onMouseLeave={() => {

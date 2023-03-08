@@ -7,6 +7,8 @@ import { LandingSection } from "./sections/landing-section/LandingSection";
 import { AboutMe } from "./sections/about-me/AboutMe";
 import { Navbar } from "./components/Navbar";
 import { ThemeContext } from "./ThemeContext";
+import { Projects } from "./sections/projects/Projects";
+import { Contact } from "./sections/contact/Contact";
 
 const App = () => {
   // mouse refs
@@ -50,6 +52,8 @@ const App = () => {
           <Navbar />
           <LandingSection smallDotRef={smallDotRef} bigDotRef={bigDotRef} />
           <AboutMe />
+          <Projects />
+          <Contact/>
         </div>
         <ScrollGuide />
 

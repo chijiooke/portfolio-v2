@@ -8,19 +8,19 @@ const ThreeJsDonutComponent = (props: any) => {
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
   const [up, setUp] = useState(false);
-  useFrame((state, delta) => {});
+  useFrame((state, delta) => {
+    if (ref.current) {
+      ref.current.rotation.z += 0.003;
+    }
+  });
   useEffect(() => {
-    // if (ref.current) {
-    //     ref.current.rotation.y += 13.500;
-    //   }
     props.bigDotRef.current.style.borderColor = hovered
       ? "hotpink"
       : "chartreuse";
     props.smallDotRef.current.style.scale = hovered ? 0.5 : 1;
   }, [hovered]);
-  const { scale, positionY } = useSpring({
-    scale: hovered ? 0.28 : 0.2,
-    positionY: up ? 2 : 0,
+  const { scale } = useSpring({
+    scale: hovered ? 0.18 : 0.15,
     config: config.wobbly,
   });
 
@@ -32,10 +32,10 @@ const ThreeJsDonutComponent = (props: any) => {
     <animated.mesh
       style={{ zIndex: 200 }}
       {...props}
-      //   rotation=[20,20,20]
-      position={[-8, 0, 0]}
+        rotation={[7,2,0]}
+      // position={[-8, 0, 0]}
       ref={ref}
-      scale={scale || 1}
+      scale={scale || 0.1}
       onClick={(event) => click(!clicked)}
       onPointerOver={(event) => {
         hover(true);

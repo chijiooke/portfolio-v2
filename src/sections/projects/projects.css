@@ -1,0 +1,70 @@
+.skill__section__wrapper {
+  display: flex;
+  gap: 6rem;
+}
+.project__card__wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+.project__card {
+  background-color: var(--dimgrey);
+  width: 20rem;
+  padding: 1rem;
+  border-radius: var(--borderRadius);
+}
+.project__description {
+  font-size: small;
+  opacity: 0.5;
+}
+
+.project__footer {
+  position: relative;
+  z-index: 90;
+  font-size: small;
+  color: rgb(119, 119, 119);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.skill__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: var(--dimgrey);
+  min-width: 12rem;
+  padding: 1rem;
+  border-radius: var(--borderRadius);
+}
+
+.resume__wrapper {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  z-index: 90;
+  /* border-radius: 0.4rem; */
+  text-align: center;
+  /* color: var(--dimgrey); */
+  /* background: var(--blueGreenGradient); */
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-top: 1px dashed var(--mildGreen);
+  /* border-; */
+}
+
+.resume__wrapper>a>button {
+   /* border: 1px solid var(--dimgrey); */
+   margin-top: 0.5rem;
+   color: var(--dimgrey);
+   background-color: var( --mildGreen);
+  }
+.resume__wrapper>a>button:hover {
+   scale: 1.03;
+   border: 0;
+  }

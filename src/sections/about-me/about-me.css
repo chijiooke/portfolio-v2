@@ -16,13 +16,13 @@
   border-radius: 1.5rem;
   border: 0;
   position: absolute;
-
+  transition: 0.8s ease-in-out  top 1s left 1s;
 }
 
 .my__image:hover {
     left: 0.4rem;
     top: 0.4rem;
-    transition: 0.8s ease-in-out ;
+  
 }
 
 

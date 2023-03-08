@@ -12,7 +12,7 @@ export const Navbar = () => {
         boxSizing: "border-box",
         display: "flex",
         justifyContent: "space-between",
-        position: "sticky",
+        position: "fixed",
         top: 0,
         padding: "1rem 3rem",
         marginTop: "1rem",

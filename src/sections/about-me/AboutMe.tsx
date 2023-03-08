@@ -6,12 +6,13 @@ import me from "../../assets/display-picture.jpg";
 import "./about-me.css";
 import { SectionHeader } from "../../components/SectionHeader";
 import { useThemeContext } from "../../ThemeContext";
+// import Fade from 'react-reveal/Fade';
 import ThreeJsCylinderComponent from "../../components/ThreeJSCylinderComponent";
 import { Canvas } from "@react-three/fiber";
 import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
 
 export const AboutMe = () => {
-  const { smallDotRef, bigDotRef } = useThemeContext();
+
 
   return (
     <ScrollSnapWrapper>
@@ -33,6 +34,14 @@ export const AboutMe = () => {
           bigDotRef={bigDotRef}
         />
       </Canvas> */}
+{/* 
+
+
+<Fade bottom>
+          <h1>React Reveal</h1>
+        </Fade> */}
+
+
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="about__me__wrapper">
@@ -46,12 +55,12 @@ export const AboutMe = () => {
               exposed to the basics of web design/development, where I learnt
               how to add colors to web-pages and make alerts pop up at a click
               of a button. I was amazed and seamingly obsessed with my new
-              tricks with personal study I learnt the basics of HTML,CSS, JS &
-              PHP an in no time I took on a voluteer role at an NGO as a web
-              developer for a time period.{" "}
+              trick and with some personal study I learnt the basics of HTML,CSS, JS &
+              PHP. In no time I took on a voluteer role at an NGO as a web
+              developer for a time period to better improve.{" "}
             </p>
             <p className="about__me__text">
-              fast forward a couple of years later I've been oportuned to work
+              fast forward a couple of years later, I've been oportuned to work
               in various sectors{" "}
               <UnderlinedAnchor to="https://raaxo.ng/">SAAS</UnderlinedAnchor>,{" "}
               <UnderlinedAnchor to="https://multonion.com/">
