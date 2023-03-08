@@ -55,7 +55,7 @@ export const AboutMe = () => {
               exposed to the basics of web design/development, where I learnt
               how to add colors to web-pages and make alerts pop up at a click
               of a button. I was amazed and seamingly obsessed with my new
-              trick and with some personal study I learnt the basics of HTML,CSS, JS &
+              trick and with some personal study I learnt the basics of HTML, CSS, JS &
               PHP. In no time I took on a voluteer role at an NGO as a web
               developer for a time period to better improve.{" "}
             </p>
@@ -70,7 +70,7 @@ export const AboutMe = () => {
               <UnderlinedAnchor to="https://fastmeet.cam">
                 open source
               </UnderlinedAnchor>{" "}
-              whils utilizing my passion for combining typography, imagery,
+              while utilizing my passion for combining typography, imagery,
               Interactions, data and colors to create solutions to diverse
               business problems.
             </p>{" "}
