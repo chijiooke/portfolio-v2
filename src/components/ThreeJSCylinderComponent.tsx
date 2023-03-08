@@ -16,9 +16,10 @@ const ThreeJsCylinderComponent = (props: any) => {
     props.bigDotRef.current.style.borderColor = hovered
       ? "hotpink"
       : "chartreuse";
+    props.smallDotRef.current.style.scale = hovered ? 0.5 : 1;
   }, [hovered]);
   const { scale } = useSpring({
-    scale: hovered ? 2 : 1.5,
+    scale: hovered ? 2.1 : 1.8,
     config: config.wobbly,
   });
 

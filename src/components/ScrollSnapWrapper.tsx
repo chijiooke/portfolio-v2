@@ -19,6 +19,7 @@ export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
         flexDirection: "column",
         MozBoxSizing: "border-box",
         scrollSnapAlign: "start",
+        position: "relative",
         // padding:'200px'
       }}
     >

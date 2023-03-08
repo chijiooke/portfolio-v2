@@ -1,0 +1,57 @@
+.about__me__wrapper {
+  display: flex;
+  gap: 2rem;
+}
+.about__me__text {
+  width: 40vw;
+}
+.image__wrapper {
+  position: relative;
+  border: 0;
+}
+.my__image {
+  width: 20vw;
+  filter: grayscale();
+  border-radius: 1.5rem;
+  border: 0;
+}
+
+/* .image__wrapper::before {
+  border-radius: 1.5rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: var(--mildGreen);
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  content: "";
+  /* z-index: 900; */
+  /* opacity: 0.6; */
+/* }  */
+
+.image__wrapper::before {
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    border-radius: 1.5rem;
+    background-size: 400% 400%;
+    /* background-color: var(--mildGreen); */
+    background: linear-gradient(-80deg, #6de857,#da57e8, #fd6eff, #6effdb );
+    left: 2rem;
+    top: 2rem;
+    animation: animateBG 6s infinite ease-in-out;
+    transition: all ease-in-out;
+  }
+  
+  @keyframes animateBG {
+    0% {
+      background-size: 100% 100%;
+    }
+    50% {
+      background-size: 400% 400%;
+    }
+    100% {
+      background-size: 100% 100%;
+    }
+  }

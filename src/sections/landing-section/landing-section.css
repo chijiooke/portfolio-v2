@@ -1,0 +1,32 @@
+.name__text {
+  font-size: 12rem;
+  margin: 0;
+  padding: 0;
+  line-height: 12rem;
+  height: 12rem;
+  font-weight: 500;
+  font-family: "Calibre", sans-serif;
+  margin-top: 4rem;
+  /* color: #fff; */
+  letter-spacing: -0.5rem;
+  color: transparent;
+  -webkit-text-fill-color: #000 transparent;
+  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #6de857,#da57e8, #fd6eff, #6effdb );
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animateBG 6s infinite ease-in-out;
+  transition: all ease-in-out;
+}
+
+@keyframes animateBG {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 400% 400%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}

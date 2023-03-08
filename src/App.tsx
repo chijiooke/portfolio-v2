@@ -1,10 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import ThreeJsCylinderComponent from "./components/ThreeJSCylinderComponent";
+import { useEffect, useRef } from "react";
 import { useMousePosition } from "./utils/useMousePosition";
-import { LandingSection } from "./sections/LandingSection";
+
+import { PageWapper } from "./components/PageWapper";
+import { ScrollGuide } from "./components/ScrollGuide";
+import { LandingSection } from "./sections/landing-section/LandingSection";
+import { AboutMe } from "./sections/about-me/AboutMe";
+import { Navbar } from "./components/Navbar";
+import { ThemeContext } from "./ThemeContext";
 
 const App = () => {
+  // mouse refs
   const position = useMousePosition();
   const smallDotRef = useRef<HTMLDivElement | null>(null);
   const bigDotRef = useRef<HTMLDivElement | null>(null);
@@ -19,62 +24,39 @@ const App = () => {
     }
     return;
   }, [position]);
+
   return (
-    <div
-      style={{
-        boxSizing: "border-box",
-        width: "100vw",
-        height: "100vh",
-        margin: 0,
-        padding: 0,
-        display: "flex",
-      }}
-    >
-      <div
-        style={{
-          boxSizing: "border-box",
-          color: "#fff",
-          margin: 0,
-          padding: 0,
-          zIndex: 20,
-          top: 0,
-          position: "relative",
-          overflow: "scroll",
-          scrollSnapPointsY: "repeat(100vh)",
-          scrollSnapType: "y mandatory",
-          overflowX: "hidden",
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          // justifyContent: "center",
-        }}
-      >
-        <Canvas
+    <ThemeContext.Provider value={{ smallDotRef, bigDotRef }}>
+      <PageWapper>
+        <div
           style={{
-            width: "100vw",
-            height: "100vh",
-            transition: "0.8s",
-            position: "absolute",
+            boxSizing: "border-box",
+            color: "#fff",
+            margin: 0,
+            padding: 0,
+            zIndex: 20,
             top: 0,
-            zIndex: 0,
+            position: "relative",
+            overflow: "scroll",
+            scrollSnapPointsY: "repeat(100vh)",
+            scrollSnapType: "y mandatory",
+            overflowX: "hidden",
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <ambientLight />
-          <ThreeJsCylinderComponent
-            position={[6, 0, 0]}
-            wireframe={true}
-            smallDotRef={smallDotRef}
-            bigDotRef={bigDotRef}
-          />
-        </Canvas>
-        <LandingSection />
-        <LandingSection />
-      </div>
+          <Navbar />
+          <LandingSection smallDotRef={smallDotRef} bigDotRef={bigDotRef} />
+          <AboutMe />
+        </div>
+        <ScrollGuide />
 
-      <div ref={bigDotRef} className="cursor-dot-outline"></div>
-      <div ref={smallDotRef} className="cursor-dot"></div>
-    </div>
+        <div ref={bigDotRef} className="cursor-dot-outline"></div>
+        <div ref={smallDotRef} className="cursor-dot"></div>
+      </PageWapper>
+    </ThemeContext.Provider>
   );
 };
 
