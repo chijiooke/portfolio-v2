@@ -1,15 +1,11 @@
+import me from "../../assets/display-picture.jpg";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
+import { SectionHeader } from "../../components/SectionHeader";
 import { StyledSpanTags } from "../../components/StyledSpanTags";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
-import me from "../../assets/display-picture.jpg";
 import "./about-me.css";
-import { SectionHeader } from "../../components/SectionHeader";
-import { useThemeContext } from "../../ThemeContext";
 // import Fade from 'react-reveal/Fade';
-import ThreeJsCylinderComponent from "../../components/ThreeJSCylinderComponent";
-import { Canvas } from "@react-three/fiber";
-import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
 
 export const AboutMe = () => {
 

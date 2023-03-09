@@ -1,0 +1,95 @@
+.contact__form {
+  background-color: var(--dimgrey);
+  border-radius: var(--borderRadius);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2;
+  width: 30vw;
+}
+
+.contact__inputfield {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__inputfield > input,
+.contact__inputfield > textarea {
+  border: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(94, 94, 94);
+  color: #fff;
+}
+.contact__inputfield > input:focus,
+.contact__form > div > textarea:focus {
+  outline: 1px solid hotpink;
+  transition: 0.4s all;
+}
+
+.contact__form > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mildGreen);
+  color: var(--dimgrey);
+}
+
+.input__label {
+  font-size: small;
+}
+.info__text {
+  max-width: 40vw;
+  color: var(--mildGreen);
+  font-size: small;
+  text-align: center;
+  padding: 0;
+}
+
+.footer {
+  z-index: 2;
+  text-align: center;
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 1.2rem;
+}
+
+.waving__hand {
+  /* animation: waveHand 0.6s infinite; */
+  /* transform: rotate(-45deg); */
+  animation: waveHand 0.6s infinite ease-in-out;
+}
+
+@keyframes wavehand{
+    0% {transform: rotate(0deg);} 
+    25% {
+        transform: rotate(-45deg)
+      }
+      50% {
+        transform: rotate(45deg)
+      }
+      75% {
+        transform: rotate(-45deg)
+      }
+    100%{transform: rotate(0deg);}
+}
+
+@keyframes waveHand {
+  0% {
+    scale: 0;
+  }
+  25% {
+    scale: 2;
+  }
+  50% {
+    scale: 1;
+  }
+  75% {
+    scale: 2;
+  }
+  100% {
+    scale: 0;
+  }
+}

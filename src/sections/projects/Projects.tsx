@@ -29,12 +29,14 @@ export const Projects = () => {
       >
         <ambientLight />
         <ThreeJsDonutComponent
+         rotation={[7,2,0]}
           position={[-6, 0, 0]}
           wireframe={true}
           smallDotRef={smallDotRef}
           bigDotRef={bigDotRef}
         />
         <ThreeJsDonutComponent
+        //  rotation={[7,2,0]}
           position={[22, 0, -10]}
           wireframe={true}
           smallDotRef={smallDotRef}

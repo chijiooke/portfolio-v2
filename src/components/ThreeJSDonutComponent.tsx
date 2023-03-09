@@ -32,10 +32,11 @@ const ThreeJsDonutComponent = (props: any) => {
     <animated.mesh
       style={{ zIndex: 200 }}
       {...props}
-        rotation={[7,2,0]}
+     
+      rotation={props.rotation}
       // position={[-8, 0, 0]}
       ref={ref}
-      scale={scale || 0.1}
+      scale={props.scale || scale}
       onClick={(event) => click(!clicked)}
       onPointerOver={(event) => {
         hover(true);

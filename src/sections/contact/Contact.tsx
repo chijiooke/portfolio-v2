@@ -1,10 +1,22 @@
-import React from "react";
+import { useForm } from "@formspree/react";
+import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
-import { useForm, CardElement, ValidationError } from "@formspree/react";
+import { SectionHeader } from "../../components/SectionHeader";
+import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
+import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
+import { useThemeContext } from "../../ThemeContext";
+import "./contact.css";
 
 export const Contact = () => {
+  type message = {
+    email: string;
+    message: string;
+  };
   const [state, handleSubmit] = useForm("xnqyzayg");
+  const { smallDotRef, bigDotRef } = useThemeContext();
+  const [data, setData] = useState<message>({ email: "", message: "" });
 
   if (state.succeeded) {
     return <div>Payment has been handled successfully!</div>;
@@ -12,27 +24,100 @@ export const Contact = () => {
   return (
     <ScrollSnapWrapper>
       {" "}
-      <Container>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit({ name: "mike" });
-          }}
-        >
-          <div>
-            <label htmlFor="email">Email Address</label>
-            <input id="email" type="email" name="email" />
-          </div>
-          <div>
-            <label htmlFor="messsage">Message</label>
-            <textarea id="messsage" name="message" rows={4} />
-          </div>
+      <Canvas
+        style={{
+          width: "100vw",
+          height: "100vh",
+          transition: "0.8s",
+          position: "absolute",
+          top: 0,
+          zIndex: 0,
+        }}
+      >
+        <ambientLight />
+        <ThreeJsDonutComponent
+          position={[0, -4, 1]}
+          scale={0.25}
+          rotation={[0, 0, 0]}
+          wireframe={true}
+          smallDotRef={smallDotRef}
+          bigDotRef={bigDotRef}
+        />
+      </Canvas>
+      {/* <Container> */}
+      <SectionHeader>Get In Touch</SectionHeader>
+      <form
+        className="contact__form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(data);
+        }}
+      >
+        <p className="info__text">
+          Hi <span className="waving__hand">👋🏿</span>, I'm always interested in
+          contributing to open source projects.
+          <br></br> <br></br>Kindly Reach out or email me at{" "}
+          <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
+            michaelsylva36@gmail.com
+          </UnderlinedAnchor>{" "}
+          for open-source collaborations, proposals & banter on why Iron Man is
+          earth's greatest super hero.
+        </p>
+        {/* <div style={{ display: "flex", gap: "1rem" }}> */}
+        <div className="contact__inputfield">
+          <label className="input__label" htmlFor="name">
+            Name
+          </label>
+          <input
+            id="name"
+            type="name"
+            name="name"
+            placeholder="Tony Stark"
+            onChange={(e) => {
+              setData({ ...data, email: e.target.value });
+            }}
+          />
+        </div>
+        <div className="contact__inputfield">
+          <label className="input__label" htmlFor="email">
+            Email Address
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="richesttony01@mail.com"
+            onChange={(e) => {
+              setData({ ...data, email: e.target.value });
+            }}
+          />
+        </div>
+        {/* </div> */}
 
-          <button type="submit" disabled={state.submitting}>
-            {state.submitting ? "Handling payment..." : "Pay"}
-          </button>
-        </form>
-      </Container>
+        <div className="contact__inputfield">
+          <label className="input__label" htmlFor="messsage">
+            Message
+          </label>
+          <textarea
+            id="messsage"
+            name="message"
+            placeholder="hello there.."
+            rows={4}
+            onChange={(e) => {
+              setData({ ...data, message: e.target.value });
+            }}
+          />
+        </div>
+
+        <button type="submit" disabled={state.submitting || data.email === ""}>
+          {state.submitting ? "sending..." : "Send"}
+        </button>
+      </form>
+      {/* </Container> */}
+      <div className="footer">
+        Designed & Built by Silva Chijioke Michael
+        <p className="info__text">Built with ReactJS · Typescript · ThreeJS</p>
+      </div>
     </ScrollSnapWrapper>
   );
 };
