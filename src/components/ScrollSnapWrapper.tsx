@@ -1,8 +1,9 @@
 import Aos from "aos";
 import React, { Children, FC, ReactNode, useEffect, useState } from "react";
 
-export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
+export const ScrollSnapWrapper: FC<{ children: ReactNode; id: string }> = ({
   children,
+  id,
 }) => {
   useEffect(() => {
     Aos.init();
@@ -21,6 +22,7 @@ export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
 
   return (
     <div
+      id={id}
       style={{
         boxSizing: "border-box",
         color: "#fff",

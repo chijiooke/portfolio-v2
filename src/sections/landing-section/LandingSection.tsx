@@ -11,7 +11,7 @@ export const LandingSection: FC<{
   bigDotRef?: React.MutableRefObject<HTMLDivElement | null>;
 }> = ({ smallDotRef, bigDotRef }) => {
   return (
-    <ScrollSnapWrapper>
+    <ScrollSnapWrapper id="home">
       <Canvas
         style={{
           width: "100vw",
@@ -62,7 +62,7 @@ export const LandingSection: FC<{
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-delay="1200"
-          style={{ width: "fit-content", zIndex: "900" }}
+          style={{ width: "fit-content", zIndex: "9" }}
         >
           {" "}
           Get In Touch

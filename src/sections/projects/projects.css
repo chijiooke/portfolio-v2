@@ -20,7 +20,7 @@
 
 .project__footer {
   position: relative;
-  z-index: 90;
+  z-index: 9;
   font-size: small;
   color: rgb(119, 119, 119);
   display: flex;
@@ -28,12 +28,16 @@
   justify-content: space-between;
 }
 
+.alt__descr{
+  display: none;
+ }
+
 .skill {
   display: flex;
   gap: 0.2rem;
 }
 
-.skill__wrapper {
+.skills__and__resume {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -42,29 +46,105 @@
   padding: 1rem;
   border-radius: var(--borderRadius);
 }
+.skill__wrapper {
+}
+
+.project__title {
+  margin: 0;
+}
 
 .resume__wrapper {
   margin-top: 1.5rem;
   padding: 0.5rem;
-  z-index: 90;
-  /* border-radius: 0.4rem; */
+  z-index: 9;
   text-align: center;
-  /* color: var(--dimgrey); */
-  /* background: var(--blueGreenGradient); */
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
   border-top: 1px dashed var(--mildGreen);
+  align-items: center;
   /* border-; */
 }
 
-.resume__wrapper>a>button {
-   /* border: 1px solid var(--dimgrey); */
-   margin-top: 0.5rem;
-   color: var(--dimgrey);
-   background-color: var( --mildGreen);
+.resume__wrapper > a > button {
+  margin-top: 0.5rem;
+  color: var(--dimgrey);
+  background-color: var(--mildGreen);
+}
+.resume__wrapper > a > button:hover {
+  scale: 1.03;
+  border: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .project__card__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-.resume__wrapper>a>button:hover {
-   scale: 1.03;
-   border: 0;
+
+  .project__skills {
+    font-size: smaller;
   }
+  .alt__descr{
+    display: none;
+   }
+}
+
+@media only screen and (max-width: 708px) {
+  .skill__section__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .project__card {
+    width: 100%;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+  }
+  .project__card__wrapper {
+    width: 80vw;
+  }
+  .project__description {
+    display: none;
+  }
+
+  .project__skills {
+    display: none;
+  }
+  .skills__and__resume {
+    width: 80vw;
+    /* max-width: 80vw; */
+    padding:1rem 0.5rem ;
+  }
+  .skill__wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .skill,
+  .resume__wrapper {
+    margin-top: 0;
+    font-size: smaller;
+    padding-bottom: 0;
+  }
+  .resume__wrapper > p {
+    display: none;
+  }
+
+  .project__footer > div > a > svg {
+    margin-top: 0.8rem;
+    height: 20px;
+    width: 20px;
+  }
+  .project__footer > p {
+    margin: 0;
+  }
+  .alt__descr{
+   display: block;
+  }
+
+  .project__type{
+    display: none;
+  }
+}

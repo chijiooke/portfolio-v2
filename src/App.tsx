@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useRef, useState } from "react";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./sections/navigation/Navigation";
 import { PageWapper } from "./components/PageWapper";
 import { ScrollGuide } from "./components/ScrollGuide";
 import { AboutMe } from "./sections/about-me/AboutMe";
@@ -68,6 +68,7 @@ const App = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            scrollBehavior:'smooth'
           }}
           onScroll={(e) => {
             e.stopPropagation();

@@ -35,7 +35,7 @@ export const Contact = () => {
   //   return <div>Payment has been handled successfully!</div>;
   // }
   return (
-    <ScrollSnapWrapper>
+    <ScrollSnapWrapper id="contact-me">
       {" "}
       <Canvas
         style={{
@@ -74,7 +74,7 @@ export const Contact = () => {
             Thanks for reaching out, you should get a response in no time ✨
           </div>
         ) : (
-          <p className="info__text">
+          <p className="info__text form__greeting__text">
             Hello, I'm always interested in contributing to open source
             projects.
             <br></br> <br></br>Kindly Reach out or email me at{" "}
@@ -148,6 +148,13 @@ export const Contact = () => {
         >
           {state.submitting ? "sending..." : "Send"}
         </button>
+
+        <p className="email__me">
+          or email me at{" "}
+          <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
+            michaelsylva36@gmail.com
+          </UnderlinedAnchor>{" "}
+        </p>
       </form>
       <div className="footer">
         Designed & Built by Silva Chijioke Michael

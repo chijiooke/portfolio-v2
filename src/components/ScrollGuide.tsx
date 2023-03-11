@@ -6,15 +6,11 @@ export const ScrollGuide: FC<{ isAtBottom: boolean }> = ({ isAtBottom }) => {
     <div
       style={{
         display: `${isAtBottom ? "none" : "flex"}`,
-        transition: "0.8s",
-        gap: "0.5rem",
-        transform: "rotate(90Deg)",
-        position: "fixed",
-        left: "3rem",
-        animation: "mymove 1.8s infinite",
       }}
+
+      className="scroll__guide"
     >
-      Scroll Up <ArrowRight />
+      Scroll <ArrowRight />
     </div>
   );
 };

@@ -9,7 +9,7 @@ import "./about-me.css";
 
 export const AboutMe = () => {
   return (
-    <ScrollSnapWrapper>
+    <ScrollSnapWrapper id="about-me">
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="about__me__wrapper">

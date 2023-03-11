@@ -16,39 +16,60 @@
   border-radius: 1.5rem;
   border: 0;
   position: absolute;
-  transition: 0.8s ease-in-out  top 1s left 1s;
+  transition: 0.8s ease-in-out top 1s left 1s;
 }
 
 .my__image:hover {
-    left: 0.4rem;
-    top: 0.4rem;
-  
+  left: 0.4rem;
+  top: 0.4rem;
 }
 
-
 .image__wrapper::before {
-    content: "";
-    width: 20rem;
-    height: 20rem;
-    position: absolute;
-    border-radius: 1.5rem;
+  content: "";
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  border-radius: 1.5rem;
+  background-size: 400% 400%;
+  background: linear-gradient(-80deg, #6de857, #da57e8, #fd6eff, #6effdb);
+  left: 2rem;
+  top: 2rem;
+  animation: animateBG 6s infinite ease-in-out;
+  transition: all ease-in-out;
+}
+
+@keyframes animateBG {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
     background-size: 400% 400%;
-    /* background-color: var(--mildGreen); */
-    background: linear-gradient(-80deg, #6de857,#da57e8, #fd6eff, #6effdb );
-    left: 2rem;
-    top: 2rem;
-    animation: animateBG 6s infinite ease-in-out;
-    transition: all ease-in-out;
   }
-  
-  @keyframes animateBG {
-    0% {
-      background-size: 100% 100%;
-    }
-    50% {
-      background-size: 400% 400%;
-    }
-    100% {
-      background-size: 100% 100%;
-    }
+  100% {
+    background-size: 100% 100%;
   }
+}
+
+@media only screen and (max-width: 1100px) {
+  .about__me__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .about__me__text {
+    width: 100%;
+  }
+
+  .image__wrapper {
+    position: static;
+  }
+  .my__image {
+    position: static;
+    border: 0;
+    border-radius: 50%;
+  }
+  .image__wrapper::before {
+    display: none;
+  }
+}

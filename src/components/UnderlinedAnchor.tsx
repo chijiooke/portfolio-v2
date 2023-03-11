@@ -3,27 +3,27 @@ import { Link } from "react-router-dom";
 import theme from "../assets/theme";
 import { useThemeContext } from "../ThemeContext";
 
-export const UnderlinedAnchor: FC<{ children: ReactNode; to: string }> = ({
-  children,
-  to,
-}) => {
+export const UnderlinedAnchor: FC<{
+  children: ReactNode;
+  to: string;
+  download?: boolean;
+}> = ({ children, to, download }) => {
   const { smallDotRef, bigDotRef } = useThemeContext();
 
   return (
     <a
       style={{ cursor: "none" }}
       href={to}
-      rel="noreferrer"
+      rel="noreferrer noopener"
       target="_blank"
+      download={download}
       onMouseEnter={() => {
         if (!!bigDotRef?.current && !!smallDotRef?.current) {
           smallDotRef.current.style.backgroundColor = theme.colors.hotpink;
           smallDotRef.current.style.scale = "0.4";
           bigDotRef.current.style.scale = "0.6";
-        //   bigDotRef.current.style.animation = "none";
           bigDotRef.current.style.border = "none";
           bigDotRef.current.style.backgroundColor = theme.colors.ghostpink;
-          // bigDotRef.current.style.opacity = "0.1";
         }
       }}
       onMouseLeave={() => {
