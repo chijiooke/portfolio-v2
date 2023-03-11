@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { PageWapper } from "./components/PageWapper";
 import { ScrollGuide } from "./components/ScrollGuide";
@@ -20,6 +20,21 @@ const App = () => {
   const position = useMousePosition();
   const smallDotRef = useRef<HTMLDivElement | null>(null);
   const bigDotRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  const [isAtBottom, setIsAtBottom] = useState<boolean>(false);
+
+  // useEffect(() => {
+  //   if (
+  //     !!wrapperRef.current?.scrollTop &&
+  //     wrapperRef.current?.scrollTop >= 1000
+  //   ) {
+  //     setIsAtBottom(true);
+  //     console.log(wrapperRef.current?.scrollTop);
+  //   } else {
+  //     setIsAtBottom(false);
+  //   }
+  // }, [wrapperRef.current?.scrollTop]);
 
   useEffect(() => {
     if (position && !!bigDotRef.current && !!smallDotRef.current) {
@@ -33,9 +48,10 @@ const App = () => {
   }, [position]);
 
   return (
-    <ThemeContext.Provider value={{ smallDotRef, bigDotRef}}>
+    <ThemeContext.Provider value={{ smallDotRef, bigDotRef }}>
       <PageWapper>
         <div
+          ref={wrapperRef}
           style={{
             boxSizing: "border-box",
             color: "#fff",
@@ -53,7 +69,19 @@ const App = () => {
             flexDirection: "column",
             alignItems: "center",
           }}
-          onScroll={ () =>  AOS.init()}
+          onScroll={(e) => {
+            e.stopPropagation();
+            AOS.init();
+            if (
+              !!wrapperRef.current?.scrollTop &&
+              wrapperRef.current?.scrollTop >= 2000
+            ) {
+              setIsAtBottom(true);
+              console.log(wrapperRef.current?.scrollTop);
+            } else {
+              setIsAtBottom(false);
+            }
+          }}
         >
           <Navbar />
           <LandingSection smallDotRef={smallDotRef} bigDotRef={bigDotRef} />
@@ -61,7 +89,7 @@ const App = () => {
           <Projects />
           <Contact />
         </div>
-        <ScrollGuide />
+        <ScrollGuide isAtBottom={isAtBottom} />
 
         <div ref={bigDotRef} className="cursor-dot-outline"></div>
         <div ref={smallDotRef} className="cursor-dot"></div>

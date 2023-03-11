@@ -1,14 +1,14 @@
-import React from "react";
 import { ArrowRight } from "iconsax-react";
+import { FC } from "react";
 
-export const ScrollGuide = () => {
+export const ScrollGuide: FC<{ isAtBottom: boolean }> = ({ isAtBottom }) => {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
+        display: `${isAtBottom ? "none" : "flex"}`,
+        transition: "0.8s",
         gap: "0.5rem",
-        transform: "rotate(-90Deg)",
+        transform: "rotate(90Deg)",
         position: "fixed",
         left: "3rem",
         animation: "mymove 1.8s infinite",

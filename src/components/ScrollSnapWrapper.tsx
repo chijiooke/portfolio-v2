@@ -1,5 +1,5 @@
 import Aos from "aos";
-import React, { Children, FC, ReactNode, useEffect } from "react";
+import React, { Children, FC, ReactNode, useEffect, useState } from "react";
 
 export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
   children,
@@ -8,6 +8,16 @@ export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
     Aos.init();
     // Aos.refresh()
   }, []);
+
+  // const [isAtBottom, setIsAtBottom] = useState<boolean>(false);
+  // useEffect(() => {
+  //   window.onscroll = function (ev) {
+  //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //       setIsAtBottom(true);
+  //     }
+  //     setIsAtBottom(false);
+  //   };
+  // }, [window.scrollY]);
 
   return (
     <div
