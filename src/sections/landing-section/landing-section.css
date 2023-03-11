@@ -12,7 +12,7 @@
   color: transparent;
   -webkit-text-fill-color: #000 transparent;
   background-size: 400% 400%;
-  background: linear-gradient(-45deg, #6de857,#da57e8, #fd6eff, #6effdb );
+  background: linear-gradient(-45deg, #6de857, #da57e8, #fd6eff, #6effdb);
   background-clip: text;
   -webkit-background-clip: text;
   animation: animateBG 6s infinite ease-in-out;
@@ -29,4 +29,10 @@
   100% {
     background-size: 100% 100%;
   }
+}
+
+.description__text {
+  width: 50%;
+  margin-bottom: 2rem;
+  opacity: 0.7;
 }

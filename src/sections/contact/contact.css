@@ -36,6 +36,10 @@
   background-color: var(--mildGreen);
   color: var(--dimgrey);
 }
+.contact__form > button:hover {
+  scale: 1.02;
+  border: 0;
+}
 
 .input__label {
   font-size: small;
@@ -62,18 +66,22 @@
   animation: waveHand 0.6s infinite ease-in-out;
 }
 
-@keyframes wavehand{
-    0% {transform: rotate(0deg);} 
-    25% {
-        transform: rotate(-45deg)
-      }
-      50% {
-        transform: rotate(45deg)
-      }
-      75% {
-        transform: rotate(-45deg)
-      }
-    100%{transform: rotate(0deg);}
+@keyframes wavehand {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes waveHand {
@@ -92,4 +100,12 @@
   100% {
     scale: 0;
   }
+}
+
+.appreciation__message {
+  background: var(--blueGreenGradient);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--dimgrey);
+  animation: animateBG 6s infinite ease-in-out;
 }

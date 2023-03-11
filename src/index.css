@@ -17,13 +17,17 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  
   --mildGreen: #b5f5c5;
   --hotpink: hotpink;
   --dimgrey: rgb(49, 47, 47);
 
-  --blueGreenGradient: linear-gradient(-80deg, #6de857,#da57e8, #fd6eff, #6effdb );
-
+  --blueGreenGradient: linear-gradient(
+    -80deg,
+    #6de857,
+    #da57e8,
+    #fd6eff,
+    #6effdb
+  );
 
   /* dimensions */
   --borderRadius: 1.5rem;
@@ -144,16 +148,24 @@ button:focus-visible {
   font-weight: 500;
 }
 
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--dimgrey);
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: var(--dimgrey);
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: var(--dimgrey);
+}
+
+.span__tag {
+  font-style: italic;
+  color: var(--mildGreen);
+  opacity: 1;
 }

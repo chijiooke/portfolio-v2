@@ -1,7 +1,6 @@
 import { useForm } from "@formspree/react";
 import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
-import { Container } from "../../components/Container";
+import { useEffect, useState } from "react";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { SectionHeader } from "../../components/SectionHeader";
 import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
@@ -13,14 +12,28 @@ export const Contact = () => {
   type message = {
     email: string;
     message: string;
+    name: string;
   };
   const [state, handleSubmit] = useForm("xnqyzayg");
   const { smallDotRef, bigDotRef } = useThemeContext();
-  const [data, setData] = useState<message>({ email: "", message: "" });
+  const [data, setData] = useState<message>({
+    email: "",
+    message: "",
+    name: "",
+  });
 
-  if (state.succeeded) {
-    return <div>Payment has been handled successfully!</div>;
-  }
+  useEffect(() => {
+    state.succeeded &&
+      setData({
+        email: "",
+        message: "",
+        name: "",
+      });
+  }, [state.succeeded]);
+
+  // if (state.succeeded) {
+  //   return <div>Payment has been handled successfully!</div>;
+  // }
   return (
     <ScrollSnapWrapper>
       {" "}
@@ -48,21 +61,30 @@ export const Contact = () => {
       <SectionHeader>Get In Touch</SectionHeader>
       <form
         className="contact__form"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-delay="800"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(data);
         }}
       >
-        <p className="info__text">
-          Hi <span className="waving__hand">👋🏿</span>, I'm always interested in
-          contributing to open source projects.
-          <br></br> <br></br>Kindly Reach out or email me at{" "}
-          <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
-            michaelsylva36@gmail.com
-          </UnderlinedAnchor>{" "}
-          for open-source collaborations, proposals & banter on why Iron Man is
-          earth's greatest super hero.
-        </p>
+        {state.succeeded ? (
+          <div className="appreciation__message">
+            Thanks for reaching out, you should get a response in no time ✨
+          </div>
+        ) : (
+          <p className="info__text">
+            Hello, I'm always interested in contributing to open source
+            projects.
+            <br></br> <br></br>Kindly Reach out or email me at{" "}
+            <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
+              michaelsylva36@gmail.com
+            </UnderlinedAnchor>{" "}
+            for open-source collaborations, proposals or banter on why Iron Man
+            is earth's greatest super hero.
+          </p>
+        )}
         {/* <div style={{ display: "flex", gap: "1rem" }}> */}
         <div className="contact__inputfield">
           <label className="input__label" htmlFor="name">
@@ -70,11 +92,12 @@ export const Contact = () => {
           </label>
           <input
             id="name"
-            type="name"
+            type="text"
             name="name"
             placeholder="Tony Stark"
+            value={data.name}
             onChange={(e) => {
-              setData({ ...data, email: e.target.value });
+              setData({ ...data, name: e.target.value });
             }}
           />
         </div>
@@ -86,6 +109,7 @@ export const Contact = () => {
             id="email"
             type="email"
             name="email"
+            value={data.email}
             placeholder="richesttony01@mail.com"
             onChange={(e) => {
               setData({ ...data, email: e.target.value });
@@ -101,6 +125,7 @@ export const Contact = () => {
           <textarea
             id="messsage"
             name="message"
+            value={data.message}
             placeholder="hello there.."
             rows={4}
             onChange={(e) => {
@@ -109,11 +134,21 @@ export const Contact = () => {
           />
         </div>
 
-        <button type="submit" disabled={state.submitting || data.email === ""}>
+        <button
+          type="submit"
+          disabled={
+            state.submitting ||
+            data.email === "" ||
+            data.message === "" ||
+            data.name === ""
+          }
+          style={{
+            scale: 1,
+          }}
+        >
           {state.submitting ? "sending..." : "Send"}
         </button>
       </form>
-      {/* </Container> */}
       <div className="footer">
         Designed & Built by Silva Chijioke Michael
         <p className="info__text">Built with ReactJS · Typescript · ThreeJS</p>

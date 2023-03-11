@@ -1,8 +1,14 @@
-import React, { Children, FC, ReactNode } from "react";
+import Aos from "aos";
+import React, { Children, FC, ReactNode, useEffect } from "react";
 
 export const ScrollSnapWrapper: FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  useEffect(() => {
+    Aos.init();
+    // Aos.refresh()
+  }, []);
+
   return (
     <div
       style={{

@@ -1,16 +1,21 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect, useRef } from "react";
-import { useMousePosition } from "./utils/useMousePosition";
-
+import { Navbar } from "./components/Navbar";
 import { PageWapper } from "./components/PageWapper";
 import { ScrollGuide } from "./components/ScrollGuide";
-import { LandingSection } from "./sections/landing-section/LandingSection";
 import { AboutMe } from "./sections/about-me/AboutMe";
-import { Navbar } from "./components/Navbar";
-import { ThemeContext } from "./ThemeContext";
-import { Projects } from "./sections/projects/Projects";
 import { Contact } from "./sections/contact/Contact";
+import { LandingSection } from "./sections/landing-section/LandingSection";
+import { Projects } from "./sections/projects/Projects";
+import { ThemeContext } from "./ThemeContext";
+import { useMousePosition } from "./utils/useMousePosition";
 
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   // mouse refs
   const position = useMousePosition();
   const smallDotRef = useRef<HTMLDivElement | null>(null);
@@ -28,7 +33,7 @@ const App = () => {
   }, [position]);
 
   return (
-    <ThemeContext.Provider value={{ smallDotRef, bigDotRef }}>
+    <ThemeContext.Provider value={{ smallDotRef, bigDotRef}}>
       <PageWapper>
         <div
           style={{
@@ -48,12 +53,13 @@ const App = () => {
             flexDirection: "column",
             alignItems: "center",
           }}
+          onScroll={ () =>  AOS.init()}
         >
           <Navbar />
           <LandingSection smallDotRef={smallDotRef} bigDotRef={bigDotRef} />
           <AboutMe />
           <Projects />
-          <Contact/>
+          <Contact />
         </div>
         <ScrollGuide />
 

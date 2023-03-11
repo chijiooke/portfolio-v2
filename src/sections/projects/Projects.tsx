@@ -1,9 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import {
-    ArrowRight3,
-    DocumentCode,
-    ExportSquare
-} from "iconsax-react";
+import { ArrowRight3, DocumentCode, ExportSquare } from "iconsax-react";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { SectionHeader } from "../../components/SectionHeader";
 import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
@@ -17,39 +13,18 @@ export const Projects = () => {
   const { smallDotRef, bigDotRef } = useThemeContext();
   return (
     <ScrollSnapWrapper>
-      <Canvas
-        style={{
-          width: "100vw",
-          height: "100vh",
-          transition: "0.8s",
-          position: "absolute",
-          top: 0,
-          zIndex: 0,
-        }}
-      >
-        <ambientLight />
-        <ThreeJsDonutComponent
-         rotation={[7,2,0]}
-          position={[-6, 0, 0]}
-          wireframe={true}
-          smallDotRef={smallDotRef}
-          bigDotRef={bigDotRef}
-        />
-        <ThreeJsDonutComponent
-        //  rotation={[7,2,0]}
-          position={[22, 0, -10]}
-          wireframe={true}
-          smallDotRef={smallDotRef}
-          bigDotRef={bigDotRef}
-        />
-      </Canvas>
       <div className="skill__section__wrapper">
         <div>
           {" "}
           <SectionHeader>Featured Projects</SectionHeader>
           <div className="project__card__wrapper">
-            {projects.map((project) => (
-              <div className="project__card">
+            {projects.map((project, index) => (
+              <div
+                className="project__card"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-delay={800 + 200 * index}
+              >
                 <p>{project.title}</p>
                 <p className="project__description">{project.description}</p>
                 <p>{project.skills.join(" · ")}</p>
@@ -81,7 +56,12 @@ export const Projects = () => {
         <div>
           {" "}
           <SectionHeader>Skills & Tools</SectionHeader>
-          <div className="skill__wrapper">
+          <div
+            className="skill__wrapper"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-delay="800"
+          >
             {skills.map((skill) => (
               <div className="skill">
                 <ArrowRight3 color="#37d67a" />

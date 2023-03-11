@@ -12,6 +12,7 @@
     "@formspree/react": "^2.4.1",
     "@react-spring/three": "^9.7.1",
     "@react-three/fiber": "^8.11.5",
+    "aos": "^3.0.0-beta.6",
     "iconsax-react": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -19,6 +20,7 @@
     "three": "^0.150.1"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/three": "^0.149.0",
