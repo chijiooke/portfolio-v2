@@ -51,10 +51,8 @@ export const Navbar = () => {
         <div style={{ display: "flex", alignItems: "center", gap: ".8rem" }}>
           <HambergerMenu
             size="32"
-            // className="hamburger"
             color={theme.colors.mildGreen}
             data-aos="fade-left"
-            // data-aos-easing="linear"
             data-aos-delay="300"
             onClick={() => {
               settoggled((prev) => !prev);
@@ -80,8 +78,21 @@ export const Navbar = () => {
           backgroundTimeOut();
         }}
       >
-        <animated.div className="side__nav" style={{ right: right }}>
-          <button className="nav__close__btn">
+        <animated.div
+          className="side__nav"
+          style={{ right: right }}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+        >
+          <button
+            className="nav__close__btn"
+            onClick={() => {
+              setToggleSideNav((prev) => !prev);
+              backgroundTimeOut();
+            }}
+          >
             <CloseCircle />
           </button>
           <div className="navigation">

@@ -18,6 +18,16 @@
   transition: all ease-in-out;
 }
 
+.get__in__touch__btn{
+  width: fit-content;
+  position: relative;
+  z-index: 20;
+}
+
+/* .get__in__touch__btn:hover{
+  scale: 1.2;
+} */
+
 @keyframes animateBG {
   0% {
     background-size: 100% 100%;
@@ -49,6 +59,9 @@
 }
 
 @media only screen and (max-width: 598px) {
+  .landing__section__wrapper {
+    margin-top: 8rem;
+  }
   .description__text {
     width: 100%;
   }

@@ -67,7 +67,7 @@
   animation: waveHand 0.6s infinite ease-in-out;
 }
 
-.email__me{
+.email__me {
   display: none;
 }
 
@@ -127,29 +127,38 @@
     align-items: center;
     width: 80%;
     padding: 1rem;
+    margin-bottom: 10rem;
+   
   }
 
   .contact__inputfield > input,
-.contact__inputfield > textarea {
-  
-  padding: 0.8rem;
-  border-radius: 0.5rem;
+  .contact__inputfield > textarea {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+  }
 
-}
+  .contact__canvas {
+    width: 100vw;
+    height: 100vh;
+    transition: 0.8s;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
 
   .info__text {
     max-width: 100%;
     font-size: smaller;
   }
-  .email__me{
+  .email__me {
     padding: 0;
     margin: 0;
     display: block;
   }
 
-  .form__greeting__text{
+  .form__greeting__text {
     display: none;
   }
-  .input__label{
+  .input__label {
   }
 }

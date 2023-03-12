@@ -16,6 +16,7 @@ export const Contact = () => {
   };
   const [state, handleSubmit] = useForm("xnqyzayg");
   const { smallDotRef, bigDotRef } = useThemeContext();
+  const [smallScreen, setsmallScreen] = useState(false);
   const [data, setData] = useState<message>({
     email: "",
     message: "",
@@ -29,14 +30,15 @@ export const Contact = () => {
         message: "",
         name: "",
       });
-  }, [state.succeeded]);
+    if (window.screen.width < 600) {
+      setsmallScreen(true);
+    } else {
+      setsmallScreen(false);
+    }
+  }, [state.succeeded, window.screen.width]);
 
-  // if (state.succeeded) {
-  //   return <div>Payment has been handled successfully!</div>;
-  // }
   return (
     <ScrollSnapWrapper id="contact-me">
-      {" "}
       <Canvas
         style={{
           width: "100vw",
@@ -45,6 +47,7 @@ export const Contact = () => {
           position: "absolute",
           top: 0,
           zIndex: 0,
+          display: smallScreen ? "none" : "block",
         }}
       >
         <ambientLight />

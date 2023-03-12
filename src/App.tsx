@@ -24,18 +24,6 @@ const App = () => {
 
   const [isAtBottom, setIsAtBottom] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   if (
-  //     !!wrapperRef.current?.scrollTop &&
-  //     wrapperRef.current?.scrollTop >= 1000
-  //   ) {
-  //     setIsAtBottom(true);
-  //     console.log(wrapperRef.current?.scrollTop);
-  //   } else {
-  //     setIsAtBottom(false);
-  //   }
-  // }, [wrapperRef.current?.scrollTop]);
-
   useEffect(() => {
     if (position && !!bigDotRef.current && !!smallDotRef.current) {
       smallDotRef.current.style.top = `${position.y}px`;
@@ -52,7 +40,7 @@ const App = () => {
       <PageWapper>
         <div
           ref={wrapperRef}
-          className="scroll__snap__wrapper"
+          className="scroll__snap__container"
           onScroll={(e) => {
             e.stopPropagation();
             AOS.init();
