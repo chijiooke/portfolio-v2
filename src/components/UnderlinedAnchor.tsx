@@ -7,11 +7,13 @@ export const UnderlinedAnchor: FC<{
   children: ReactNode;
   to: string;
   download?: boolean;
-}> = ({ children, to, download }) => {
+  onClick?: () => void;
+}> = ({ children, to, download, onClick }) => {
   const { smallDotRef, bigDotRef } = useThemeContext();
 
   return (
     <a
+      onClick={onClick}
       style={{ cursor: "none" }}
       href={to}
       rel="noreferrer noopener"

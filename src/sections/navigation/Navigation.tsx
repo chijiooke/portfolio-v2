@@ -60,10 +60,13 @@ export const Navbar = () => {
             data-aos="fade-left"
             data-aos-delay="300"
             onClick={() => {
-              closeNavigation();
+              settoggled((prev) => !prev);
+              setToggleSideNav((prev) => !prev);
+              // closeNavigation();
+              // setToggleSideNav((prev) => !prev);
             }}
           />
-          <UnderlinedAnchor to={cv} >
+          <UnderlinedAnchor to={cv}>
             <DocumentText
               size="25"
               color={theme.colors.mildGreen}
@@ -89,7 +92,12 @@ export const Navbar = () => {
             e.stopPropagation();
           }}
         >
-          <button className="nav__close__btn" onClick={() => {}}>
+          <button
+            className="nav__close__btn"
+            onClick={() => {
+              closeNavigation();
+            }}
+          >
             <CloseCircle />
           </button>
           <div className="navigation">
@@ -117,17 +125,49 @@ export const Navbar = () => {
                 My Resume
               </button>
             </UnderlinedAnchor>
-            <div className="social__links">
-              <UnderlinedAnchor to="https://github.com/chijiooke">
+            <div
+              className="social__links"
+              // onClick={() => {
+              //   closeNavigation();
+              // }}
+            >
+              <UnderlinedAnchor
+                to=""
+                onClick={() => {
+                  closeNavigation();
+                  window.open("https://github.com/chijiooke", "_blank");
+                }}
+              >
                 GH
               </UnderlinedAnchor>
-              <UnderlinedAnchor to="https://twitter.com/chijiooke_">
+              <UnderlinedAnchor
+                to=""
+                onClick={() => {
+                  closeNavigation();
+                  window.open("https://twitter.com/chijiooke_", "_blank");
+                }}
+              >
                 TW
               </UnderlinedAnchor>
-              <UnderlinedAnchor to="https://www.linkedin.com/in/chijiooke">
+              <UnderlinedAnchor
+                to=""
+                onClick={() => {
+                  closeNavigation();
+                  window.open(
+                    "https://www.linkedin.com/in/chijiooke",
+                    "_blank"
+                  );
+                }}
+              >
                 LN
               </UnderlinedAnchor>
-              <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
+              <UnderlinedAnchor
+                to=""
+                onClick={() => {
+                  closeNavigation();
+                  window.open("mailto:michaelsylva36@gmail.com", "_blank");
+                }}
+              >
                 MAIL
               </UnderlinedAnchor>
             </div>
