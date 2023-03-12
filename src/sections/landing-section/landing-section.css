@@ -22,6 +22,7 @@
   width: fit-content;
   position: relative;
   z-index: 20;
+  background-color: #242424;
 }
 
 /* .get__in__touch__btn:hover{

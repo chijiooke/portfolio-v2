@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import React, { FC } from "react";
+import { Color } from "three";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { StyledSpanTags } from "../../components/StyledSpanTags";
@@ -70,6 +71,8 @@ export const LandingSection: FC<{
                 width: "fit-content",
                 zIndex: "9",
                 position: "relative",
+                backgroundColor: "#242424",
+                color:'#fff'
               }}
               // className="get__in__touch__btn"
             >
