@@ -15,7 +15,7 @@ const projects: projectType[] = [
       "A B2B procurement tool with features to handle team managemnt , dissemination of tender information (RFIs, RFQs and RFPs) , bidding, contracting and project management",
     skills: ["typescript", "react-js", "MUI", "node-js", "postgreSQL"],
     type: "contract",
-    links: { website: "multonion.com" },
+    links: { website: "https://multonion.com" },
   },
   {
     title: "Fast Meet",
@@ -25,7 +25,7 @@ const projects: projectType[] = [
     skills: ["typescript", "react-js", "MUI", "node-js", "WebRTC", "Socket IO"],
     type: "open source",
     links: {
-      website: "https://fastmeet.cam/",
+      website: "https://fastmeet.cam",
       github: "https://github.com/chijiooke/fastmeet",
     },
   },
@@ -36,7 +36,7 @@ const projects: projectType[] = [
       "A task management and collaboration tool where users can manage personal accounts, teams, tasks, projects and communicate (chat)",
     skills: ["typescript", "react-js", "MUI", "node-js", "postgreSQL"],
     type: "Open Source (In Progress)",
-    links: { website: "https://github.com/chijiooke/town-hall" },
+    links: { github: "https://github.com/chijiooke/town-hall" },
   },
 ];
 
