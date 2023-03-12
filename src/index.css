@@ -57,6 +57,24 @@ h1 {
   line-height: 1.1;
 }
 
+.scroll__snap__wrapper {
+  box-sizing: border-box;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  z-index: 20;
+  top: 0;
+  position: relative;
+  overflow: scroll;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+}
 button {
   border-radius: 8px;
   /* border: 1px solid transparent; */
@@ -111,11 +129,14 @@ button:focus-visible {
 }
 
 @keyframes mymove {
-  from {
+  0% {
     bottom: 3rem;
   }
-  to {
+  50% {
     bottom: 6rem;
+  }
+  100% {
+    bottom: 3rem;
   }
 }
 
@@ -233,6 +254,10 @@ button:focus-visible {
   }
 }
 @media only screen and (max-width: 600px) {
+  .scroll__snap__wrapper {
+    scroll-snap-points-y: none;
+    scroll-snap-type: none;
+  }
   .container {
     width: 100%;
     max-width: 90vw;

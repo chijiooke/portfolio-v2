@@ -52,24 +52,7 @@ const App = () => {
       <PageWapper>
         <div
           ref={wrapperRef}
-          style={{
-            boxSizing: "border-box",
-            color: "#fff",
-            margin: 0,
-            padding: 0,
-            zIndex: 20,
-            top: 0,
-            position: "relative",
-            overflow: "scroll",
-            scrollSnapPointsY: "repeat(100vh)",
-            scrollSnapType: "y mandatory",
-            overflowX: "hidden",
-            height: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            scrollBehavior:'smooth'
-          }}
+          className="scroll__snap__wrapper"
           onScroll={(e) => {
             e.stopPropagation();
             AOS.init();
