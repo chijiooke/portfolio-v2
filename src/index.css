@@ -140,7 +140,6 @@ button:focus-visible {
   width: 75vw;
 }
 
-
 .cursor-dot,
 .cursor-dot-outline {
   pointer-events: none;
@@ -212,6 +211,10 @@ button:focus-visible {
 }
 
 @media only screen and (max-width: 810px) {
+  .cursor-dot-outline,
+  .cursor-dot {
+    display: none;
+  }
   .description__text {
     width: 100%;
   }
