@@ -18,6 +18,11 @@ export const Navbar = () => {
     config: config.gentle,
   });
 
+  const closeNavigation = () => {
+    setToggleSideNav((prev) => !prev);
+    backgroundTimeOut();
+  };
+
   const backgroundTimeOut = () =>
     setTimeout(() => {
       settoggled((prev) => !prev);
@@ -55,11 +60,10 @@ export const Navbar = () => {
             data-aos="fade-left"
             data-aos-delay="300"
             onClick={() => {
-              settoggled((prev) => !prev);
-              setToggleSideNav((prev) => !prev);
+              closeNavigation();
             }}
           />
-          <UnderlinedAnchor to={cv} download>
+          <UnderlinedAnchor to={cv} >
             <DocumentText
               size="25"
               color={theme.colors.mildGreen}
@@ -74,8 +78,7 @@ export const Navbar = () => {
         className="side__nav__wrapper "
         style={{ display: toggled ? "flex" : "none" }}
         onClick={() => {
-          setToggleSideNav((prev) => !prev);
-          backgroundTimeOut();
+          closeNavigation();
         }}
       >
         <animated.div
@@ -86,23 +89,33 @@ export const Navbar = () => {
             e.stopPropagation();
           }}
         >
-          <button
-            className="nav__close__btn"
-            onClick={() => {
-              setToggleSideNav((prev) => !prev);
-              backgroundTimeOut();
-            }}
-          >
+          <button className="nav__close__btn" onClick={() => {}}>
             <CloseCircle />
           </button>
           <div className="navigation">
             {navData.map((nav) => (
-              <a href={`#${nav}`}>{nav.split("-").join(" ")}</a>
+              <a
+                href={`#${nav}`}
+                onClick={() => {
+                  window.location.href = `#${nav}`;
+                  closeNavigation();
+                }}
+              >
+                {nav.split("-").join(" ")}
+              </a>
             ))}
           </div>
           <div className="social__links__Resume__wrapper">
-            <UnderlinedAnchor to={cv} download>
-              <button className="download__resume">My Resume</button>
+            <UnderlinedAnchor to={cv}>
+              <button
+                className="download__resume"
+                onClick={() => {
+                  closeNavigation();
+                  window.open(`${cv}`, "_blank");
+                }}
+              >
+                My Resume
+              </button>
             </UnderlinedAnchor>
             <div className="social__links">
               <UnderlinedAnchor to="https://github.com/chijiooke">
