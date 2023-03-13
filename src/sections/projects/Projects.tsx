@@ -6,7 +6,7 @@ import { useThemeContext } from "../../ThemeContext";
 import projects from "./project-data";
 import "./projects.css";
 import { skills } from "./skills-data";
-import cv from "../../assets/SILVA_MICHAEL_CV.pdf";
+import cv from "../../assets/resume.pdf";
 import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
 import { Canvas } from "@react-three/fiber";
 

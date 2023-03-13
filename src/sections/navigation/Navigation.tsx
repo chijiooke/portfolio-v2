@@ -2,7 +2,7 @@
 import { animated, config, useSpring } from "@react-spring/web";
 import { CloseCircle, DocumentText, HambergerMenu } from "iconsax-react";
 import { useState } from "react";
-import cv from "../../assets/SILVA_MICHAEL_CV.pdf";
+import cv from "../../assets/resume.pdf";
 import theme from "../../assets/theme";
 import logo from "../../assets/wireframe-globe.png";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
