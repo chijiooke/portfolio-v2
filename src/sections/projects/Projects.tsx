@@ -6,7 +6,7 @@ import { useThemeContext } from "../../ThemeContext";
 import projects from "./project-data";
 import "./projects.css";
 import { skills } from "./skills-data";
-import cv from "../../assets/resume.pdf";
+import cv from "../../assets/silva_chijioke_resume.pdf";
 import ThreeJsDonutComponent from "../../components/ThreeJSDonutComponent";
 import { Canvas } from "@react-three/fiber";
 
@@ -45,7 +45,7 @@ export const Projects = () => {
                 data-aos-delay={800 + 200 * index}
               >
 
-                
+
                 <p className="project__title">{project.title}</p>
                 <p className="project__description">{project.description}</p>
                 <p className="project__skills">{project.skills.join(" · ")}</p>
