@@ -8,13 +8,14 @@ export const UnderlinedAnchor: FC<{
   to: string;
   download?: boolean;
   onClick?: () => void;
-}> = ({ children, to, download, onClick }) => {
+  removeUnderline?: boolean;
+}> = ({ children, to, download, onClick, removeUnderline }) => {
   const { smallDotRef, bigDotRef } = useThemeContext();
 
   return (
     <a
       onClick={onClick}
-      style={{ cursor: "none" }}
+      style={{ cursor: "none", textDecoration: removeUnderline?"none": "underline" }}
       href={to}
       rel="noreferrer noopener"
       target="_blank"

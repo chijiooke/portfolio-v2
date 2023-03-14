@@ -37,6 +37,12 @@
   align-self: flex-end;
   margin: 0;
   padding: 0;
+  background-color: transparent;
+  color:#fff;
+}
+
+.nav__close__btn:hover {
+  color:var(--mildGreen);
 }
 .hamburger {
   transition: scale 1s ease-in-out;
@@ -71,7 +77,9 @@
   color: #fff;
   padding: 0;
   margin: 1rem 0;
-  /* text-decoration: none; */
+  background-color: transparent;
+  text-decoration: none;
+  
 }
 .download__resume:hover {
   scale: 1;

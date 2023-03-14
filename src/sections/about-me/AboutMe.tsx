@@ -28,9 +28,10 @@ export const AboutMe = () => {
               exposed to the basics of web design/development, where I learnt
               how to add colors to web-pages and make alerts pop up at a click
               of a button. I was amazed and seamingly obsessed with my new trick
-              and with some personal study I learnt the basics of HTML, CSS, JS
-              & PHP. In no time I took on a voluteer role at an NGO as a web
-              developer for a time period to better improve.{" "}
+              and with some personal study I learnt the basics of{" "}
+              <StyledSpanTags>HTML, CSS, JS & PHP</StyledSpanTags>. In no time I
+              took on a voluteer role at an NGO as a web developer for a time
+              period to better improve.{" "}
             </p>
             <p
               className="about__me__text"
@@ -38,7 +39,7 @@ export const AboutMe = () => {
               data-aos-easing="linear"
               data-aos-delay="1000"
             >
-              fast forward a couple of years later, I've been oportuned to work
+              Fast forward a couple of years later, I've been oportuned to work
               in various sectors{" "}
               <UnderlinedAnchor to="https://raaxo.ng/">SAAS</UnderlinedAnchor>,{" "}
               <UnderlinedAnchor to="https://multonion.com/">
@@ -46,7 +47,7 @@ export const AboutMe = () => {
               </UnderlinedAnchor>{" "}
               and even{" "}
               <UnderlinedAnchor to="https://fastmeet.cam">
-                open source
+                Open-Source
               </UnderlinedAnchor>{" "}
               while utilizing my passion for combining typography, imagery,
               Interactions, data and colors to create solutions to diverse

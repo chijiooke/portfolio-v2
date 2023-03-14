@@ -27,8 +27,6 @@ export const Projects = () => {
         <ambientLight />
         <ThreeJsDonutComponent
           position={[-6, 0, 1]}
-          // scale={0.2}
-          // rotation={[0.3, 0.3, 0]}
           wireframe={true}
           smallDotRef={smallDotRef}
           bigDotRef={bigDotRef}
@@ -94,7 +92,7 @@ export const Projects = () => {
 
             <div className="resume__wrapper">
               <p>For more info</p>
-              <UnderlinedAnchor to={cv} download>
+              <UnderlinedAnchor to={cv} download removeUnderline>
                 <button>Download Resume</button>
               </UnderlinedAnchor>
             </div>

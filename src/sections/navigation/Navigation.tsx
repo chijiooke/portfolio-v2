@@ -114,7 +114,7 @@ export const Navbar = () => {
             ))}
           </div>
           <div className="social__links__Resume__wrapper">
-            <UnderlinedAnchor to={cv}>
+            <UnderlinedAnchor to={cv} removeUnderline>
               <button
                 className="download__resume"
                 onClick={() => {
@@ -127,9 +127,6 @@ export const Navbar = () => {
             </UnderlinedAnchor>
             <div
               className="social__links"
-              // onClick={() => {
-              //   closeNavigation();
-              // }}
             >
               <UnderlinedAnchor
                 to=""

@@ -61,7 +61,7 @@ export const LandingSection: FC<{
             collaborating on{" "}
             <StyledSpanTags>freelance and open source projects.</StyledSpanTags>
           </p>
-          <a href="#contact-me">
+          <a href="#contact-me" style={{textDecoration:'none'}}>
             {" "}
             <button
               data-aos="fade-up"
@@ -72,9 +72,8 @@ export const LandingSection: FC<{
                 zIndex: "9",
                 position: "relative",
                 backgroundColor: "#242424",
-                color:'#fff'
+                color: "#fff",
               }}
-              // className="get__in__touch__btn"
             >
               {" "}
               Get In Touch
