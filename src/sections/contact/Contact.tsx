@@ -77,7 +77,10 @@ export const Contact = () => {
             Thanks for reaching out, you should get a response in no time ✨
           </div>
         ) : (
-          <p className="info__text form__greeting__text">
+          <p
+            className="info__text form__greeting__text"
+            style={{ display: window.screen.height < 900 ? "none" : "block" }}
+          >
             Hello, I'm always interested in contributing to open source
             projects.
             <br></br> <br></br>Kindly Reach out or email me at{" "}
@@ -152,7 +155,13 @@ export const Contact = () => {
           {state.submitting ? "sending..." : "Send"}
         </button>
 
-        <p className="email__me">
+        <p
+          className="email__me"
+          style={{
+            display: window.screen.height < 900 ? "block" : "none",
+            textAlign: "center",
+          }}
+        >
           or email me at{" "}
           <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
             michaelsylva36@gmail.com
