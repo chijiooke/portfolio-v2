@@ -129,7 +129,7 @@ export const Navbar = () => {
               className="social__links"
             >
               <UnderlinedAnchor
-                to=""
+                to="https://github.com/chijiooke"
                 onClick={() => {
                   closeNavigation();
                   window.open("https://github.com/chijiooke", "_blank");
@@ -138,7 +138,7 @@ export const Navbar = () => {
                 GH
               </UnderlinedAnchor>
               <UnderlinedAnchor
-                to=""
+                to="ttps://twitter.com/chijiooke_"
                 onClick={() => {
                   closeNavigation();
                   window.open("https://twitter.com/chijiooke_", "_blank");
@@ -147,7 +147,7 @@ export const Navbar = () => {
                 TW
               </UnderlinedAnchor>
               <UnderlinedAnchor
-                to=""
+                to="https://www.linkedin.com/in/chijiooke"
                 onClick={() => {
                   closeNavigation();
                   window.open(
@@ -159,7 +159,7 @@ export const Navbar = () => {
                 LN
               </UnderlinedAnchor>
               <UnderlinedAnchor
-                to=""
+                to="mailto:michaelsylva36@gmail.com"
                 onClick={() => {
                   closeNavigation();
                   window.open("mailto:michaelsylva36@gmail.com", "_blank");
