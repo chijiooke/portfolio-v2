@@ -6,7 +6,7 @@ import cv from "../../assets/silva_chijioke_resume.pdf";
 import theme from "../../assets/theme";
 import logo from "../../assets/wireframe-globe.png";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
-import { navData } from "./nav-data";
+import { contactLinks, navData } from "./nav-data";
 import "./navigation.css";
 
 export const Navbar = () => {
@@ -125,48 +125,18 @@ export const Navbar = () => {
                 My Resume
               </button>
             </UnderlinedAnchor>
-            <div
-              className="social__links"
-            >
-              <UnderlinedAnchor
-                to="https://github.com/chijiooke"
-                onClick={() => {
-                  closeNavigation();
-                  window.open("https://github.com/chijiooke", "_blank");
-                }}
-              >
-                GH
-              </UnderlinedAnchor>
-              <UnderlinedAnchor
-                to="ttps://twitter.com/chijiooke_"
-                onClick={() => {
-                  closeNavigation();
-                  window.open("https://twitter.com/chijiooke_", "_blank");
-                }}
-              >
-                TW
-              </UnderlinedAnchor>
-              <UnderlinedAnchor
-                to="https://www.linkedin.com/in/chijiooke"
-                onClick={() => {
-                  closeNavigation();
-                  window.open(
-                    "https://www.linkedin.com/in/chijiooke",
-                    "_blank"
-                  );
-                }}
-              >
-                LN
-              </UnderlinedAnchor>
-              <UnderlinedAnchor
-                to="mailto:michaelsylva36@gmail.com"
-                onClick={() => {
-                  closeNavigation();
-                  window.open("mailto:michaelsylva36@gmail.com", "_blank");
-                }}
-              >
-                MAIL
-              </UnderlinedAnchor>
+            <div className="social__links">
+              {contactLinks.map((contactlink) => (
+                <UnderlinedAnchor
+                  to={contactlink.link}
+                  onClick={() => {
+                    closeNavigation();
+                    window.open(contactlink.link, "_blank");
+                  }}
+                >
+                  {contactlink.acronym}
+                </UnderlinedAnchor>
+              ))}
             </div>
           </div>
         </animated.div>
