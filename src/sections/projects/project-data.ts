@@ -21,7 +21,7 @@ const projects: projectType[] = [
     title: "Optical Character Recognition (OCR)",
     altDescription: "Scan and Extract texts from images",
     description:
-      "A simple tool typescript and node.js used to scan images, extract text and convert images into editable, shareable PDFs that are machine-readable",
+      "A simple tool built with typescript and node.js used to scan images, extract text and convert images into editable, shareable PDFs that are machine-readable",
     skills: ["typescript", "node-js", "tesseract", "multer", "react-js"],
     type: "Open Source ",
     links: { github: "https://github.com/chijiooke/OCR-typescript" },
