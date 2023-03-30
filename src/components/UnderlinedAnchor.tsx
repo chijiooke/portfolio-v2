@@ -1,5 +1,4 @@
-import React, { FC, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { FC, ReactNode } from "react";
 import theme from "../assets/theme";
 import { useThemeContext } from "../ThemeContext";
 

@@ -62,8 +62,6 @@ export const Navbar = () => {
             onClick={() => {
               settoggled((prev) => !prev);
               setToggleSideNav((prev) => !prev);
-              // closeNavigation();
-              // setToggleSideNav((prev) => !prev);
             }}
           />
           <UnderlinedAnchor to={cv}>

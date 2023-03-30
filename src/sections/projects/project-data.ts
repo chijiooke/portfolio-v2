@@ -18,6 +18,15 @@ const projects: projectType[] = [
     links: { website: "https://multonion.com" },
   },
   {
+    title: "Optical Character Recognition (OCR)",
+    altDescription: "Scan and Extract texts from images",
+    description:
+      "A simple tool typescript and node.js used to scan images, extract text and convert images into editable, shareable PDFs that are machine-readable",
+    skills: ["typescript", "node-js", "tesseract", "multer", "react-js"],
+    type: "Open Source ",
+    links: { github: "https://github.com/chijiooke/OCR-typescript" },
+  },
+  {
     title: "Fast Meet",
     altDescription: "P2P Video/Chat Conference App",
     description:
@@ -41,15 +50,15 @@ const projects: projectType[] = [
       github: "https://github.com/abayomi1196/react-creditcard-validator",
     },
   },
-  {
-    title: "Town hall",
-    altDescription: "Project Management App",
-    description:
-      "A task management and collaboration tool where users can manage personal accounts, teams, tasks, projects and communicate (chat)",
-    skills: ["typescript", "react-js", "MUI", "node-js", "postgreSQL"],
-    type: "Open Source (In Progress)",
-    links: { github: "https://github.com/chijiooke/town-hall" },
-  },
+  // {
+  //   title: "Town hall",
+  //   altDescription: "Project Management App",
+  //   description:
+  //     "A task management and collaboration tool where users can manage personal accounts, teams, tasks, projects and communicate (chat)",
+  //   skills: ["typescript", "react-js", "MUI", "node-js", "postgreSQL"],
+  //   type: "Open Source (In Progress)",
+  //   links: { github: "https://github.com/chijiooke/town-hall" },
+  // },
 ];
 
 export default projects;

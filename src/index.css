@@ -93,6 +93,7 @@ h1 {
   scroll-snap-align: start;
   position: relative;
 }
+
 button {
   border-radius: 8px;
   display: flex;
