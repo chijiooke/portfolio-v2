@@ -100,7 +100,7 @@ export const Contact = () => {
             id="name"
             type="text"
             name="name"
-            placeholder="Tony Stark"
+            placeholder="Enter Your Name..."
             value={data.name}
             onChange={(e) => {
               setData({ ...data, name: e.target.value });
@@ -116,7 +116,7 @@ export const Contact = () => {
             type="email"
             name="email"
             value={data.email}
-            placeholder="richesttony01@mail.com"
+            placeholder="example@mail.com"
             onChange={(e) => {
               setData({ ...data, email: e.target.value });
             }}
