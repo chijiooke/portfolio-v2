@@ -1,4 +1,4 @@
-type projectType = {
+type ProjectType = {
   title: string;
   description: string;
   altDescription: string;
@@ -7,7 +7,7 @@ type projectType = {
   links: { github?: string; website?: string };
 };
 
-const projects: projectType[] = [
+const projects: ProjectType[] = [
   {
     title: "Multonion",
     altDescription: "B2B Procurement App",

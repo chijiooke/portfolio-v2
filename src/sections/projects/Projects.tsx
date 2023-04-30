@@ -22,6 +22,7 @@ export const Projects = () => {
           position: "absolute",
           top: 0,
           zIndex: 0,
+          display: window.screen.width < 600 ? "none" : "block",
         }}
       >
         <ambientLight />
@@ -44,8 +45,6 @@ export const Projects = () => {
                 data-aos-easing="linear"
                 data-aos-delay={800 + 200 * index}
               >
-
-
                 <p className="project__title">{project.title}</p>
                 <p className="project__description">{project.description}</p>
                 <p className="project__skills">{project.skills.join(" · ")}</p>

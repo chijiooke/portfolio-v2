@@ -266,6 +266,12 @@ button:focus-visible {
   .skill__section__wrapper {
     margin-top: 2rem;
   }
+
+  .scroll__snap__wrapper {
+    min-height: auto;
+    max-height: none;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 600px) {
   body {
@@ -278,10 +284,7 @@ button:focus-visible {
     scroll-snap-points-y: none;
     scroll-snap-type: none;
   }
-  .scroll__snap__wrapper {
-    min-height: auto;
-    /* margin-bottom: 4rem; */
-  }
+
   .container {
     width: 100%;
     max-width: 90vw;
