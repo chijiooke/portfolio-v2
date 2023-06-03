@@ -40,6 +40,7 @@ export const Projects = () => {
           <div className="project__card__wrapper">
             {projects.map((project, index) => (
               <div
+                key={index}
                 className="project__card"
                 data-aos="fade-up"
                 data-aos-easing="linear"
@@ -83,8 +84,8 @@ export const Projects = () => {
             data-aos-delay="800"
           >
             <div className="skill__wrapper">
-              {skills.map((skill) => (
-                <div className="skill">
+              {skills.map((skill, index) => (
+                <div className="skill" key={index}>
                   <ArrowRight3 color="#37d67a" />
                   {skill.skill}
                 </div>

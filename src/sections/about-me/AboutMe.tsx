@@ -1,4 +1,5 @@
-import me from "../../assets/display-picture.jpg";
+// import me from "../../assets/display-picture.jpg";
+import me from "../../assets/display-image.png";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { SectionHeader } from "../../components/SectionHeader";
@@ -20,13 +21,13 @@ export const AboutMe = () => {
               data-aos-easing="linear"
               data-aos-delay="800"
             >
-              2 years before graduating from the{" "}
+              a few years before graduating from the{" "}
               <UnderlinedAnchor to="https://fupre.edu.ng/">
                 Federal University of Petroleum Resources, Effurun, Nigeria.
               </UnderlinedAnchor>{" "}
               <StyledSpanTags> (BSc. Mathematics)</StyledSpanTags> we were
               exposed to the basics of web design/development, where I learnt
-              how to add colors to web-pages and make alerts pop up at a click
+              how to add colors to web-pages and make alerts pop up at the click
               of a button. I was amazed and seamingly obsessed with my new trick
               and with some personal study I learnt the basics of{" "}
               <StyledSpanTags>HTML, CSS, JS & PHP</StyledSpanTags>. In no time I
@@ -62,7 +63,7 @@ export const AboutMe = () => {
           >
             <img
               src={me}
-              alt="me"
+              alt="image of Chijoke's face"
               className="my__image"
               onMouseEnter={() => {}}
             />

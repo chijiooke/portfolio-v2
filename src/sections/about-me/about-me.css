@@ -8,26 +8,29 @@
 }
 .image__wrapper {
   position: relative;
-  border: 0;
 }
+
 .my__image {
   width: 20vw;
-  filter: grayscale();
+  max-width: 310px;
   border-radius: 1.5rem;
   border: 0;
   position: absolute;
-  transition: 0.8s ease-in-out top 1s left 1s;
+  transition: 0.8s ease-in-out all;
+  overflow: hidden;
 }
 
 .my__image:hover {
   left: 0.4rem;
   top: 0.4rem;
+  scale: 1.1;
+  filter: grayscale();
 }
 
 .image__wrapper::before {
   content: "";
-  width: 20rem;
-  height: 20rem;
+  width: 310px;
+  height: 350px;
   position: absolute;
   border-radius: 1.5rem;
   background-size: 400% 400%;
@@ -68,6 +71,10 @@
     position: static;
     border: 0;
     border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    object-fit: cover;
   }
   .image__wrapper::before {
     display: none;

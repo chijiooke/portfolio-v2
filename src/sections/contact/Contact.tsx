@@ -67,6 +67,7 @@ export const Contact = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-delay="800"
+        // data-aos-anchor-placement="center-center"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(data);
@@ -84,8 +85,8 @@ export const Contact = () => {
             Hello, I'm always interested in contributing to open source
             projects.
             <br></br> <br></br>Kindly Reach out or email me at{" "}
-            <UnderlinedAnchor to="mailto:michaelsylva36@gmail.com">
-              michaelsylva36@gmail.com
+            <UnderlinedAnchor to="mailto:silva.chijioke.michael@gmail.com">
+              silva.chijioke.michael@gmail.com
             </UnderlinedAnchor>{" "}
             for open-source collaborations, proposals or banter on why Iron Man
             is earth's greatest super hero.
@@ -93,10 +94,21 @@ export const Contact = () => {
         )}
         {/* <div style={{ display: "flex", gap: "1rem" }}> */}
         <div className="contact__inputfield">
-          <label className="input__label" htmlFor="name">
+          <label
+            className="input__label"
+            htmlFor="name"
+            data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            data-aos-delay="1200"
+            data-aos-offset="300"
+          >
             Name
           </label>
           <input
+            data-aos="fade-in"
+            data-aos-delay="1500"
+            data-aos-easing="ease-in-sine"
+            data-aos-offset="300"
             id="name"
             type="text"
             name="name"
@@ -108,10 +120,21 @@ export const Contact = () => {
           />
         </div>
         <div className="contact__inputfield">
-          <label className="input__label" htmlFor="email">
+          <label
+            className="input__label"
+            htmlFor="email"
+            data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            data-aos-offset="300"
+            data-aos-delay="1800"
+          >
             Email Address
           </label>
           <input
+            data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            data-aos-offset="300"
+            data-aos-delay="2100"
             id="email"
             type="email"
             name="email"
@@ -125,10 +148,21 @@ export const Contact = () => {
         {/* </div> */}
 
         <div className="contact__inputfield">
-          <label className="input__label" htmlFor="messsage">
+          <label
+            className="input__label"
+            htmlFor="messsage"
+            data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            // data-aos-offset="300"
+            data-aos-delay="2400"
+          >
             Message
           </label>
           <textarea
+            data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            // data-aos-offset="300"
+            data-aos-delay="2700"
             id="messsage"
             name="message"
             value={data.message}
@@ -139,8 +173,11 @@ export const Contact = () => {
             }}
           />
         </div>
-
+        {/* <div > */}
         <button
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-sine"
+          data-aos-delay="3300"
           type="submit"
           disabled={
             state.submitting ||
@@ -148,12 +185,10 @@ export const Contact = () => {
             data.message === "" ||
             data.name === ""
           }
-          style={{
-            scale: 1,
-          }}
         >
           {state.submitting ? "sending..." : "Send"}
         </button>
+        {/* </div> */}
 
         <p
           className="email__me"

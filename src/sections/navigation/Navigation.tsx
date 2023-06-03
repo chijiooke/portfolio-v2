@@ -1,7 +1,6 @@
-// import { config, useSpring } from "@react-spring/three";
 import { animated, config, useSpring } from "@react-spring/web";
 import { CloseCircle, DocumentText, HambergerMenu } from "iconsax-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cv from "../../assets/silva_chijioke_resume.pdf";
 import theme from "../../assets/theme";
 import logo from "../../assets/wireframe-globe.png";
@@ -11,22 +10,38 @@ import "./navigation.css";
 
 export const Navbar = () => {
   const [toggled, settoggled] = useState<boolean>(false);
-  const [toggleSideNav, setToggleSideNav] = useState<boolean>(false);
+  // const [toggleSideNav, setToggleSideNav] = useState<boolean>(false);
+  const [right, setRight] = useState<number>(-400);
 
-  const { right } = useSpring({
-    right: toggleSideNav ? 30 : -400,
-    config: config.gentle,
-  });
+  const openNavigation = () => {
+    // setToggleSideNav((prev) => !prev);
+    settoggled(true);
+    setRight(-600);
+    slideAnimation1();
+    slideAnimation2();
+  };
 
   const closeNavigation = () => {
-    setToggleSideNav((prev) => !prev);
+    // setToggleSideNav((prev) => !prev);
+    setRight(-600);
     backgroundTimeOut();
   };
+
+  const slideAnimation1 = () =>
+    setTimeout(() => {
+      setRight(80);
+      // clearInterval()
+    }, 20);
+
+  const slideAnimation2 = () =>
+    setTimeout(() => {
+      setRight(30);
+    }, 1000);
 
   const backgroundTimeOut = () =>
     setTimeout(() => {
       settoggled((prev) => !prev);
-    }, 800);
+    }, 1200);
 
   return (
     <>
@@ -53,18 +68,39 @@ export const Navbar = () => {
             chijioke{" "}
           </p>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: ".8rem" }}>
+        {/* <div style={{ }}> */}
+        <div className="large__device__nav">
+          {" "}
+          {navData.map((nav, index) => (
+            <a
+              className="nav_link_item"
+              key={index}
+              href={`#${nav}`}
+              onClick={() => {
+                window.location.href = `#${nav}`;
+                // closeNavigation();
+              }}
+            >
+              {nav.split("-").join(" ")}
+            </a>
+          ))}
+          <UnderlinedAnchor to="https://docs.google.com/document/d/1hSHnlShZCinjZqNDsObMgTQ6t0ALyFZ_d_VPB0MvAcE/edit?usp=sharing">
+            <button>Resume</button>
+          </UnderlinedAnchor>
+        </div>
+        <div className="smaller__device__nav">
           <HambergerMenu
             size="32"
             color={theme.colors.mildGreen}
             data-aos="fade-left"
             data-aos-delay="300"
-            onClick={() => {
-              settoggled((prev) => !prev);
-              setToggleSideNav((prev) => !prev);
-            }}
+            onClick={openNavigation}
           />
-          <UnderlinedAnchor to={cv}>
+
+          <a
+            href="https://docs.google.com/document/d/1hSHnlShZCinjZqNDsObMgTQ6t0ALyFZ_d_VPB0MvAcE/edit?usp=sharing"
+            style={{ display: "flex" }}
+          >
             <DocumentText
               size="25"
               color={theme.colors.mildGreen}
@@ -72,17 +108,18 @@ export const Navbar = () => {
               data-aos-easing="linear"
               data-aos-delay="400"
             />
-          </UnderlinedAnchor>
+          </a>
         </div>
       </div>
-      <animated.div
+      {/* </div> */}
+      <div
         className="side__nav__wrapper "
         style={{ display: toggled ? "flex" : "none" }}
         onClick={() => {
           closeNavigation();
         }}
       >
-        <animated.div
+        <div
           className="side__nav"
           style={{ right: right }}
           onClick={(e) => {
@@ -99,8 +136,9 @@ export const Navbar = () => {
             <CloseCircle />
           </button>
           <div className="navigation">
-            {navData.map((nav) => (
+            {navData.map((nav, index) => (
               <a
+                key={index}
                 href={`#${nav}`}
                 onClick={() => {
                   window.location.href = `#${nav}`;
@@ -112,20 +150,10 @@ export const Navbar = () => {
             ))}
           </div>
           <div className="social__links__Resume__wrapper">
-            <UnderlinedAnchor to={cv} removeUnderline>
-              <button
-                className="download__resume"
-                onClick={() => {
-                  closeNavigation();
-                  window.open(`${cv}`, "_blank");
-                }}
-              >
-                My Resume
-              </button>
-            </UnderlinedAnchor>
             <div className="social__links">
-              {contactLinks.map((contactlink) => (
+              {contactLinks.map((contactlink, index) => (
                 <UnderlinedAnchor
+                  keyProp={index}
                   to={contactlink.link}
                   onClick={() => {
                     closeNavigation();
@@ -136,9 +164,20 @@ export const Navbar = () => {
                 </UnderlinedAnchor>
               ))}
             </div>
+            <UnderlinedAnchor to={cv} removeUnderline>
+              <button
+                className="download__resume"
+                onClick={() => {
+                  closeNavigation();
+                  window.open(`${cv}`, "_blank");
+                }}
+              >
+                View My Resume
+              </button>
+            </UnderlinedAnchor>
           </div>
-        </animated.div>
-      </animated.div>
+        </div>
+      </div>
     </>
   );
 };

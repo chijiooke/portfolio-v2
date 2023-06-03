@@ -245,13 +245,6 @@ button:focus-visible {
   z-index: 30;
 }
 
-.scroll__guide:hover {
-  border: 1px solid var(--mildGreen);
-  padding: 1rem;
-  border-radius: var(--borderRadius);
-  transition: ease-in-out 0.1s;
-}
-
 @media only screen and (max-width: 810px) {
   .cursor-dot-outline,
   .cursor-dot {

@@ -3,18 +3,25 @@ import theme from "../assets/theme";
 import { useThemeContext } from "../ThemeContext";
 
 export const UnderlinedAnchor: FC<{
+  keyProp?: any;
   children: ReactNode;
   to: string;
   download?: boolean;
   onClick?: () => void;
   removeUnderline?: boolean;
-}> = ({ children, to, download, onClick, removeUnderline }) => {
+}> = ({ children, to, download, onClick, removeUnderline, keyProp }) => {
   const { smallDotRef, bigDotRef } = useThemeContext();
 
   return (
     <a
+      key={keyProp || null}
       onClick={onClick}
-      style={{ cursor: "none", textDecoration: removeUnderline?"none": "underline" }}
+      style={{
+        cursor: "none",
+        textDecoration: removeUnderline ? "none" : "underline",
+        height: "fit-content",
+        // display: "flex",
+      }}
       href={to}
       rel="noreferrer noopener"
       target="_blank"

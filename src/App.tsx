@@ -20,6 +20,8 @@ const App = () => {
   const position = useMousePosition();
   const smallDotRef = useRef<HTMLDivElement | null>(null);
   const bigDotRef = useRef<HTMLDivElement | null>(null);
+
+  // wrapper div ref
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   const [isAtBottom, setIsAtBottom] = useState<boolean>(false);
@@ -49,7 +51,6 @@ const App = () => {
               wrapperRef.current?.scrollTop >= 2000
             ) {
               setIsAtBottom(true);
-              console.log(wrapperRef.current?.scrollTop);
             } else {
               setIsAtBottom(false);
             }
