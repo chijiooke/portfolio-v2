@@ -68,7 +68,7 @@ export const Navbar = () => {
             chijioke{" "}
           </p>
         </div>
-        {/* <div style={{ }}> */}
+
         <div className="large__device__nav">
           {" "}
           {navData.map((nav, index) => (
@@ -78,7 +78,6 @@ export const Navbar = () => {
               href={`#${nav}`}
               onClick={() => {
                 window.location.href = `#${nav}`;
-                // closeNavigation();
               }}
             >
               {nav.split("-").join(" ")}
@@ -111,7 +110,6 @@ export const Navbar = () => {
           </a>
         </div>
       </div>
-      {/* </div> */}
       <div
         className="side__nav__wrapper "
         style={{ display: toggled ? "flex" : "none" }}

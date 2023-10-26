@@ -38,7 +38,7 @@ export const Contact = () => {
   }, [state.succeeded, window.screen.width]);
 
   return (
-    <ScrollSnapWrapper id="contact-me">
+    <ScrollSnapWrapper id="contact">
       <Canvas
         style={{
           width: "100vw",

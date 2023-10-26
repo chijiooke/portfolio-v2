@@ -1,16 +1,15 @@
-// import me from "../../assets/display-picture.jpg";
-import me from "../../assets/display-image.png";
+import me from "../../assets/display-picture.png";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { SectionHeader } from "../../components/SectionHeader";
 import { StyledSpanTags } from "../../components/StyledSpanTags";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
 import "./about-me.css";
-// import Fade from 'react-reveal/Fade';
+
 
 export const AboutMe = () => {
   return (
-    <ScrollSnapWrapper id="about-me">
+    <ScrollSnapWrapper id="about">
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="about__me__wrapper">
