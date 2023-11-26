@@ -55,16 +55,15 @@ export const LandingSection: FC<{
             <StyledSpanTags>
               Client-Side focused Software Engineer {"  "}
             </StyledSpanTags>
-            (Core Typescript) currently based in{" "}
-            <StyledSpanTags>Abuja, Nigeria.</StyledSpanTags> <br></br>I am
-            focused on creatively solving problems using{" "}
+            (Core Typescript), focused on creatively solving problems using{" "}
             <StyledSpanTags>
               modern Javascript based technologies
             </StyledSpanTags>{" "}
             and I am open to collaborating on{" "}
             <StyledSpanTags>freelance and open source projects.</StyledSpanTags>
           </p>
-          <a href="#contact-me" style={{ textDecoration: "none" }}>
+        
+          <a href="#contact" style={{ textDecoration: "none" }}>
             {" "}
             <button
               data-aos="fade-up"

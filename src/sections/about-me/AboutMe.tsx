@@ -1,4 +1,6 @@
+import { useState } from "react";
 import me from "../../assets/display-picture.png";
+import naruto from "../../assets/naruto-vs-sasuke-anime.gif";
 import { Container } from "../../components/Container";
 import { ScrollSnapWrapper } from "../../components/ScrollSnapWrapper";
 import { SectionHeader } from "../../components/SectionHeader";
@@ -6,8 +8,8 @@ import { StyledSpanTags } from "../../components/StyledSpanTags";
 import { UnderlinedAnchor } from "../../components/UnderlinedAnchor";
 import "./about-me.css";
 
-
 export const AboutMe = () => {
+  const [imgSrc, setImgSrc] = useState(me);
   return (
     <ScrollSnapWrapper id="about">
       <Container>
@@ -20,38 +22,38 @@ export const AboutMe = () => {
               data-aos-easing="linear"
               data-aos-delay="800"
             >
-              a few years before graduating from the{" "}
-              <UnderlinedAnchor to="https://fupre.edu.ng/">
-                Federal University of Petroleum Resources, Effurun, Nigeria.
-              </UnderlinedAnchor>{" "}
-              <StyledSpanTags> (BSc. Mathematics)</StyledSpanTags> we were
-              exposed to the basics of web design/development, where I learnt
-              how to add colors to web-pages and make alerts pop up at the click
-              of a button. I was amazed and seamingly obsessed with my new trick
-              and with some personal study I learnt the basics of{" "}
-              <StyledSpanTags>HTML, CSS, JS & PHP</StyledSpanTags>. In no time I
-              took on a voluteer role at an NGO as a web developer for a time
-              period to better improve.{" "}
+              I am a senior frontend engineer with over 5+ years of experience
+              working with web technologies and 3+ years focused on core
+              frontend engineering using tools like{" "}
+              <StyledSpanTags>
+                Typescript, Javascript, ReactJS, VueJS, Redux, RTK, CSS, Sass,
+                Docker, Kafka, NodeJs and Express.
+              </StyledSpanTags>
             </p>
             <p
               className="about__me__text"
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-delay="1000"
+              data-aos-delay="800"
             >
-              Fast forward a couple of years later, I've been oportuned to work
+              With a bachelors from the{" "}
+              <UnderlinedAnchor to="https://fupre.edu.ng/">
+                Federal University of Petroleum Resources, Effurun, Nigeria.
+              </UnderlinedAnchor>{" "}
+              <StyledSpanTags> (BSc. Mathematics)</StyledSpanTags> and
+              experience leading design processes, I have been oportuned to work
               in various sectors{" "}
               <UnderlinedAnchor to="https://raaxo.ng/">SAAS</UnderlinedAnchor>,{" "}
               <UnderlinedAnchor to="https://multonion.com/">
                 Procurement
               </UnderlinedAnchor>{" "}
-              and even{" "}
-              <UnderlinedAnchor to="https://fastmeet.cam">
+              and have contributed to various{" "}
+              <UnderlinedAnchor to="https://github.com/chijiooke">
                 Open-Source
               </UnderlinedAnchor>{" "}
-              while utilizing my passion for combining typography, imagery,
-              Interactions, data and colors to create solutions to diverse
-              business problems.
+              projects while utilizing my passion for combining typography,
+              imagery, Interactions, data and colors to create solutions to
+              diverse business problems.
             </p>{" "}
           </div>
           <div
@@ -61,10 +63,13 @@ export const AboutMe = () => {
             data-aos-delay="600"
           >
             <img
-              src={me}
+              onMouseOver={() => setImgSrc(naruto)}
+              onMouseLeave={() => setImgSrc(me)}
+              src={imgSrc}
               alt="image of Chijoke's face"
               className="my__image"
               onMouseEnter={() => {}}
+
             />
           </div>
         </div>

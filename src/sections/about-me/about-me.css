@@ -13,11 +13,25 @@
 .my__image {
   width: 20vw;
   max-width: 310px;
+  min-height: 348px;
   border-radius: 1.5rem;
   border: 0;
   position: absolute;
   transition: 0.8s ease-in-out all;
   overflow: hidden;
+  animation: animateImage infinite 5s;
+}
+
+@keyframes animateImage {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.03;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 .my__image:hover {
