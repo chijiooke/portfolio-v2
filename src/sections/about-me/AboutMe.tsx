@@ -44,7 +44,7 @@ export const AboutMe = () => {
                 Federal University of Petroleum Resources, Effurun, Nigeria.
               </UnderlinedAnchor>{" "}
               <StyledSpanTags> (BSc. Mathematics)</StyledSpanTags> and
-              experience leading design processes, I have been oportuned to work
+              experience in optimizing processes for faster and better results, I have been oportuned to work
               in various sectors{" "}
               <UnderlinedAnchor to="https://raaxo.ng/">SAAS</UnderlinedAnchor>,{" "}
               <UnderlinedAnchor to="https://multonion.com/">
