@@ -94,7 +94,7 @@ export const Projects = () => {
 
             <div className="resume__wrapper">
               <p>For more info</p>
-              <UnderlinedAnchor to={cv} download removeUnderline>
+              <UnderlinedAnchor to="https://docs.google.com/document/d/1hSHnlShZCinjZqNDsObMgTQ6t0ALyFZ_d_VPB0MvAcE/edit?usp=sharing" download removeUnderline>
                 <button>Download Resume</button>
               </UnderlinedAnchor>
             </div>

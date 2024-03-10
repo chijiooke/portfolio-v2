@@ -11,6 +11,7 @@ export const LandingSection: FC<{
   smallDotRef?: React.MutableRefObject<HTMLDivElement | null>;
   bigDotRef?: React.MutableRefObject<HTMLDivElement | null>;
 }> = ({ smallDotRef, bigDotRef }) => {
+  const yearsOFExperience = new Date().getFullYear() - 2019
   return (
     <ScrollSnapWrapper id="home">
       <Canvas
@@ -53,13 +54,13 @@ export const LandingSection: FC<{
           >
             I am a{" "}
             <StyledSpanTags>
-              Client-Side focused Software Engineer {"  "}
+              Senior Frontend Engineer {"  "}
             </StyledSpanTags>
-            (Core Typescript), focused on creatively solving problems using{" "}
+            with over {yearsOFExperience}+ years of experience, focused on creatively solving business problems using{" "}
             <StyledSpanTags>
-              modern Javascript based technologies
+              modern technologies
             </StyledSpanTags>{" "}
-            and I am open to collaborating on{" "}
+            , I am open to collaborating on{" "}
             <StyledSpanTags>freelance and open source projects.</StyledSpanTags>
           </p>
         

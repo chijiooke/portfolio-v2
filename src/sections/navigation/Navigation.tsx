@@ -60,8 +60,8 @@ export const Navbar = () => {
           <img src={logo} width="50px" height="50px" style={{}} />{" "}
           <p
             style={{
-              fontSize: "1.2rem",
-              letterSpacing: "-0.15rem",
+              fontSize: ".8rem",
+              // letterSpacing: "-0.15rem",
               color: theme.colors.mildGreen,
             }}
           >
@@ -167,7 +167,7 @@ export const Navbar = () => {
                 className="download__resume"
                 onClick={() => {
                   closeNavigation();
-                  window.open(`${cv}`, "_blank");
+                  window.open(`https://docs.google.com/document/d/1hSHnlShZCinjZqNDsObMgTQ6t0ALyFZ_d_VPB0MvAcE/edit?usp=sharing`, "_blank");
                 }}
               >
                 View My Resume

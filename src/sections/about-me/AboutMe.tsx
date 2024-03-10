@@ -10,6 +10,9 @@ import "./about-me.css";
 
 export const AboutMe = () => {
   const [imgSrc, setImgSrc] = useState(me);
+
+  const yearsOFExperience = new Date().getFullYear() - 2019
+  const yearsOfFrontendExperience = new Date().getFullYear() - 2020
   return (
     <ScrollSnapWrapper id="about">
       <Container>
@@ -22,11 +25,11 @@ export const AboutMe = () => {
               data-aos-easing="linear"
               data-aos-delay="800"
             >
-              I am a senior frontend engineer with over 5+ years of experience
-              working with web technologies and 3+ years focused on core
-              frontend engineering using tools like{" "}
+              I am a senior frontend engineer with over {yearsOFExperience}+ years of experience
+              working with web technologies and {yearsOfFrontendExperience}+ years focused on
+              frontend engineering. I am familiar with tools/progamming languages like{" "}
               <StyledSpanTags>
-                Typescript, Javascript, ReactJS, VueJS, Redux, RTK, CSS, Sass,
+                Typescript, Javascript, Golang, ReactJS, VueJS, Redux, RTK, CSS, Sass,
                 Docker, Kafka, NodeJs and Express.
               </StyledSpanTags>
             </p>
@@ -47,7 +50,7 @@ export const AboutMe = () => {
               <UnderlinedAnchor to="https://multonion.com/">
                 Procurement
               </UnderlinedAnchor>{" "}
-              and have contributed to various{" "}
+              and have contributed to a number of{" "}
               <UnderlinedAnchor to="https://github.com/chijiooke">
                 Open-Source
               </UnderlinedAnchor>{" "}
@@ -63,8 +66,8 @@ export const AboutMe = () => {
             data-aos-delay="600"
           >
             <img
-              onMouseOver={() => setImgSrc(naruto)}
-              onMouseLeave={() => setImgSrc(me)}
+              // onMouseOver={() => setImgSrc(naruto)}
+              // onMouseLeave={() => setImgSrc(me)}
               src={imgSrc}
               alt="image of Chijoke's face"
               className="my__image"
