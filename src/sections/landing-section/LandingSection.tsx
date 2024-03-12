@@ -54,7 +54,7 @@ export const LandingSection: FC<{
           >
             I am a{" "}
             <StyledSpanTags>
-              Senior Frontend Engineer {"  "}
+             Software Engineer {"  "}
             </StyledSpanTags>
             with over {yearsOFExperience}+ years of experience, focused on creatively solving business problems using{" "}
             <StyledSpanTags>

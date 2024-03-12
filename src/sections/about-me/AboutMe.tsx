@@ -25,13 +25,13 @@ export const AboutMe = () => {
               data-aos-easing="linear"
               data-aos-delay="800"
             >
-              I am a senior frontend engineer with over {yearsOFExperience}+ years of experience
-              working with web technologies and {yearsOfFrontendExperience}+ years focused on
-              frontend engineering. I am familiar with tools/progamming languages like{" "}
+              I am a software engineer with over {yearsOFExperience}+ years of experience working with web technologies . I am familiar with tools/progamming languages like{" "}
               <StyledSpanTags>
-                Typescript, Javascript, Golang, ReactJS, VueJS, Redux, RTK, CSS, Sass,
+                Typescript, Javascript, Golang, ReactJS, VueJS, Redux, RTK, CSS, Sass, Pub/SUb, Rabbit MQ
                 Docker, Kafka, NodeJs and Express.
               </StyledSpanTags>
+              <br></br>
+              I have experience working with distributed systems and variety of software achitechural patterns.
             </p>
             <p
               className="about__me__text"
